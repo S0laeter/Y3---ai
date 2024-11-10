@@ -8,6 +8,15 @@ public class StateMachine : MonoBehaviour
     public State currentState { get; private set; }
     private State nextState;
 
+    private void Start()
+    {
+        SetNextStateToMain();
+    }
+    public void SetNextStateToMain()
+    {
+        nextState = mainStateType;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -59,21 +68,12 @@ public class StateMachine : MonoBehaviour
         }
     }
 
-    //reset state
-    private void Awake()
-    {
-        SetNextStateToMain();
-    }
-    public void SetNextStateToMain()
-    {
-        nextState = mainStateType;
-    }
     
     private void OnValidate()
     {
         if (mainStateType == null)
         {
-            //mainStateType = new CombatIdleState();
+            mainStateType = new CombatIdleState();
         }
     }
 

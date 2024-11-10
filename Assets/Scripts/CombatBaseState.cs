@@ -3,23 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class CombatBaseState : State
 {
-
     //duration doesnt need to be the same as animation length, make it slightly shorter to transition early to next attack
-    protected bool shouldCombo;
-    protected bool shouldSkill;
-    protected int attackIndex;
-    protected int skillIndex;
-    protected bool shouldUlt;
-    protected float attackDuration;
-
-    protected bool shouldDash;
-    protected float dashDuration;
-    protected float dashCooldown;
+    protected float stateDuration;
 
     protected PlayerBehavior playerBehavior;
+    protected Rigidbody rb;
 
     public override void OnEnter(StateMachine _stateMachine)
     {
@@ -27,8 +19,7 @@ public class CombatBaseState : State
 
         //getting stuffs
         playerBehavior = GetComponent<PlayerBehavior>();
-
-        //subscribing to actions
+        rb = playerBehavior.GetComponent<Rigidbody>();
 
     }
 
@@ -42,9 +33,81 @@ public class CombatBaseState : State
     {
         base.OnExit();
 
-        //unsubscribing to actions
+    }
+
+}
+
+public class CombatIdleState : CombatBaseState
+{
+    public override void OnEnter(StateMachine _stateMachine)
+    {
+        base.OnEnter(_stateMachine);
+
+        rb.velocity = Vector3.forward * 0f;
+
+        Debug.Log("idle");
+    }
+
+    public override void OnUpdate()
+    {
+        base.OnUpdate();
+
+        //after state duration
+        if (fixedTime >= stateDuration)
+        {
+
+        }
 
     }
 
+}
+
+public class MoveForwardState : CombatBaseState
+{
+    public override void OnEnter(StateMachine _stateMachine)
+    {
+        base.OnEnter(_stateMachine);
+
+        Debug.Log("moving forward");
+    }
+
+    public override void OnUpdate()
+    {
+        base.OnUpdate();
+
+        rb.velocity = Vector3.forward * 100f * Time.deltaTime;
+
+        //after state duration
+        if (fixedTime >= stateDuration)
+        {
+
+        }
+
+    }
+
+}
+
+public class MoveBackwardState : CombatBaseState
+{
+    public override void OnEnter(StateMachine _stateMachine)
+    {
+        base.OnEnter(_stateMachine);
+
+        Debug.Log("moving backward");
+    }
+
+    public override void OnUpdate()
+    {
+        base.OnUpdate();
+
+        rb.velocity = Vector3.back * 100f * Time.deltaTime;
+
+        //after state duration
+        if (fixedTime >= stateDuration)
+        {
+
+        }
+
+    }
 
 }
