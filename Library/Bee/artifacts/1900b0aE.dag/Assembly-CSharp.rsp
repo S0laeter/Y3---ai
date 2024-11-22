@@ -375,7 +375,6 @@
 "Assets/Scripts/Actions.cs"
 "Assets/Scripts/CombatBaseState.cs"
 "Assets/Scripts/PlayerBehavior.cs"
-"Assets/Scripts/State.cs"
 "Assets/Scripts/StateMachine.cs"
 "Assets/Scripts/UIManager.cs"
 "Assets/TutorialInfo/Scripts/Readme.cs"

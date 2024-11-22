@@ -1,5 +1,38 @@
 using UnityEngine;
 
+public abstract class State
+{
+    protected float time { get; set; }
+    protected float fixedTime { get; set; }
+    protected float lateTime { get; set; }
+
+    public StateMachine stateMachine;
+
+    public virtual void OnEnter(StateMachine _stateMachine)
+    {
+        stateMachine = _stateMachine;
+    }
+
+    public virtual void OnUpdate()
+    {
+        time += Time.deltaTime;
+    }
+    public virtual void OnFixedUpdate()
+    {
+        fixedTime += Time.deltaTime;
+    }
+    public virtual void OnLateUpdate()
+    {
+        lateTime += Time.deltaTime;
+    }
+
+    public virtual void OnExit()
+    {
+
+    }
+
+}
+
 public class StateMachine : MonoBehaviour
 {
     //public string customName;

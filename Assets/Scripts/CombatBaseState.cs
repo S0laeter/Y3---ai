@@ -18,7 +18,7 @@ public class CombatBaseState : State
         base.OnEnter(_stateMachine);
 
         //getting stuffs
-        playerBehavior = GetComponent<PlayerBehavior>();
+        playerBehavior = stateMachine.GetComponent<PlayerBehavior>();
         rb = playerBehavior.GetComponent<Rigidbody>();
 
     }

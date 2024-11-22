@@ -3,16 +3,12 @@
   "WorkspaceRootPath": "E:\\Unity stuffs\\Y3 - ai\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{351F5504-21CB-DF90-5BD6-3680667CAFB9}|Assembly-CSharp.csproj|e:\\unity stuffs\\y3 - ai\\assets\\scripts\\state.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{351F5504-21CB-DF90-5BD6-3680667CAFB9}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\state.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{351F5504-21CB-DF90-5BD6-3680667CAFB9}|Assembly-CSharp.csproj|E:\\Unity stuffs\\Y3 - ai\\assets\\scripts\\statemachine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{351F5504-21CB-DF90-5BD6-3680667CAFB9}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\statemachine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{351F5504-21CB-DF90-5BD6-3680667CAFB9}|Assembly-CSharp.csproj|e:\\unity stuffs\\y3 - ai\\assets\\scripts\\combatbasestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{351F5504-21CB-DF90-5BD6-3680667CAFB9}|Assembly-CSharp.csproj|E:\\Unity stuffs\\Y3 - ai\\assets\\scripts\\combatbasestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{351F5504-21CB-DF90-5BD6-3680667CAFB9}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\combatbasestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{351F5504-21CB-DF90-5BD6-3680667CAFB9}|Assembly-CSharp.csproj|e:\\unity stuffs\\y3 - ai\\assets\\scripts\\statemachine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{351F5504-21CB-DF90-5BD6-3680667CAFB9}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\statemachine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{351F5504-21CB-DF90-5BD6-3680667CAFB9}|Assembly-CSharp.csproj|E:\\Unity stuffs\\Y3 - ai\\assets\\scripts\\playerbehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -30,21 +26,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "State.cs",
-              "DocumentMoniker": "E:\\Unity stuffs\\Y3 - ai\\Assets\\Scripts\\State.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\State.cs",
-              "ToolTip": "E:\\Unity stuffs\\Y3 - ai\\Assets\\Scripts\\State.cs",
-              "RelativeToolTip": "Assets\\Scripts\\State.cs",
-              "ViewState": "AQIAACUAAAAAAAAAAADwvzUAAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-22T13:40:05.303Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -53,27 +36,27 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\StateMachine.cs",
               "ToolTip": "E:\\Unity stuffs\\Y3 - ai\\Assets\\Scripts\\StateMachine.cs",
               "RelativeToolTip": "Assets\\Scripts\\StateMachine.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEUAAAAAAAAA",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAxwDEAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-09T15:54:20.119Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "CombatBaseState.cs",
               "DocumentMoniker": "E:\\Unity stuffs\\Y3 - ai\\Assets\\Scripts\\CombatBaseState.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\CombatBaseState.cs",
               "ToolTip": "E:\\Unity stuffs\\Y3 - ai\\Assets\\Scripts\\CombatBaseState.cs",
               "RelativeToolTip": "Assets\\Scripts\\CombatBaseState.cs",
-              "ViewState": "AQIAAFcAAAAAAAAAAAAIwHAAAAABAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAA2AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-09T14:49:28.282Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "PlayerBehavior.cs",
               "DocumentMoniker": "E:\\Unity stuffs\\Y3 - ai\\Assets\\Scripts\\PlayerBehavior.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerBehavior.cs",
@@ -86,7 +69,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "UIManager.cs",
               "DocumentMoniker": "E:\\Unity stuffs\\Y3 - ai\\Assets\\Scripts\\UIManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UIManager.cs",
@@ -94,8 +77,7 @@
               "RelativeToolTip": "Assets\\Scripts\\UIManager.cs",
               "ViewState": "AQIAAB4AAAAAAAAAAAAYwDQAAAA6AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T14:36:05.586Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-10T14:36:05.586Z"
             }
           ]
         }

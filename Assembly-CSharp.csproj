@@ -62,7 +62,6 @@
     <Compile Include="Assets\Scripts\Actions.cs" />
     <Compile Include="Assets\Scripts\UIManager.cs" />
     <Compile Include="Assets\Scripts\StateMachine.cs" />
-    <Compile Include="Assets\Scripts\State.cs" />
     <Compile Include="Assets\Scripts\CombatBaseState.cs" />
     <Compile Include="Assets\Scripts\PlayerBehavior.cs" />
   </ItemGroup>
