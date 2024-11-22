@@ -8,16 +8,14 @@ public class UIManager : MonoBehaviour
     //p1 stuffs
     public Slider player1HpSlider;
     public Image player1HpFill;
-
     public Slider player1StaminaSlider;
 
     //p2 stuffs
     public Slider player2HpSlider;
     public Image player2HpFill;
-
     public Slider player2StaminaSlider;
 
-    public Gradient gradient;
+    public Gradient hpGradient;
 
     // Start is called before the first frame update
     private void OnEnable()
@@ -47,10 +45,12 @@ public class UIManager : MonoBehaviour
             case 1:
                 player1HpSlider.maxValue = player.GetMaxHp();
                 player1HpSlider.value = player.GetCurrentHp();
-                player1HpFill.color = gradient.Evaluate(player1HpSlider.normalizedValue);
+                player1HpFill.color = hpGradient.Evaluate(player1HpSlider.normalizedValue);
                 break;
             case 2:
-
+                player1HpSlider.maxValue = player.GetMaxHp();
+                player1HpSlider.value = player.GetCurrentHp();
+                player1HpFill.color = hpGradient.Evaluate(player1HpSlider.normalizedValue);
                 break;
             default:
                 break;
