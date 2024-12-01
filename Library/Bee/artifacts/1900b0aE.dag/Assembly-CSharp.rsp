@@ -374,6 +374,7 @@
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.4f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Scripts/Actions.cs"
 "Assets/Scripts/CombatBaseState.cs"
+"Assets/Scripts/LevelManager.cs"
 "Assets/Scripts/PlayerBehavior.cs"
 "Assets/Scripts/StateMachine.cs"
 "Assets/Scripts/UIManager.cs"

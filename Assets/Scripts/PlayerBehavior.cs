@@ -6,14 +6,14 @@ public class PlayerBehavior : MonoBehaviour
 {
     public int playerID;
 
-    protected StateMachine playerStateMachine;
+    public StateMachine playerStateMachine;
 
-    protected float currentHp;
-    protected float maxHp = 100f;
-    protected float currentStamina;
-    protected float maxStamina = 100f;
+    public float currentHp;
+    public float maxHp = 100f;
+    public float currentStamina;
+    public float maxStamina = 100f;
 
-    protected bool isDead = false;
+    public bool isDead = false;
 
     // Start is called before the first frame update
     void Start()
@@ -64,7 +64,12 @@ public class PlayerBehavior : MonoBehaviour
 
         if (currentStamina < maxStamina)
         {
-            StartCoroutine(StaminaRegen());
+            //stamina doesnt regen while blocking
+            if (playerStateMachine.currentState.GetType() == typeof(BlockState))
+                return;
+            
+            currentStamina += 1 * Time.deltaTime;
+            Actions.UpdatePlayerStaminaBar(this);
         }
 
     }
@@ -88,23 +93,16 @@ public class PlayerBehavior : MonoBehaviour
     {
 
 
-        Debug.Log(this.name + " died. its over, everyone go home");
-    }
-
-    private IEnumerator StaminaRegen()
-    {
-        currentStamina++;
-        Actions.UpdatePlayerStaminaBar(this);
-
-        yield return new WaitForSeconds(1f);
+        Debug.Log(this.name + " died. its over, go home");
     }
 
 
 
-    public float GetCurrentHp() {  return currentHp; }
-    public float GetMaxHp() {  return maxHp; }
-    public float GetCurrentStamina() {  return currentStamina; }
-    public float GetMaxStamina() { return maxStamina; }
+
+
+
+
+
 
 
 }

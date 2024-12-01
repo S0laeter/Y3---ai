@@ -7,11 +7,16 @@ using UnityEngine.EventSystems;
 
 public class CombatBaseState : State
 {
+    //this is to decide which action to do next
+    public bool shouldAttack;
+    public bool shouldDefend;
+    public bool shouldMove;
+
     //duration doesnt need to be the same as animation length, make it slightly shorter to transition early to next attack
     protected float stateDuration;
 
     protected PlayerBehavior playerBehavior;
-    protected Rigidbody rb;
+    protected CharacterController controller;
 
     public override void OnEnter(StateMachine _stateMachine)
     {
@@ -19,7 +24,7 @@ public class CombatBaseState : State
 
         //getting stuffs
         playerBehavior = stateMachine.GetComponent<PlayerBehavior>();
-        rb = playerBehavior.GetComponent<Rigidbody>();
+        controller = playerBehavior.GetComponent<CharacterController>();
 
     }
 
@@ -43,8 +48,6 @@ public class CombatIdleState : CombatBaseState
     {
         base.OnEnter(_stateMachine);
 
-        rb.velocity = Vector3.forward * 0f;
-
         Debug.Log("idle");
     }
 
@@ -52,11 +55,7 @@ public class CombatIdleState : CombatBaseState
     {
         base.OnUpdate();
 
-        //after state duration
-        if (fixedTime >= stateDuration)
-        {
 
-        }
 
     }
 
@@ -75,13 +74,9 @@ public class MoveForwardState : CombatBaseState
     {
         base.OnUpdate();
 
-        rb.velocity = Vector3.forward * 100f * Time.deltaTime;
+        controller.Move(Vector3.forward * 3f * Time.deltaTime);
 
-        //after state duration
-        if (fixedTime >= stateDuration)
-        {
 
-        }
 
     }
 
@@ -100,13 +95,66 @@ public class MoveBackwardState : CombatBaseState
     {
         base.OnUpdate();
 
-        rb.velocity = Vector3.back * 100f * Time.deltaTime;
+        controller.Move(Vector3.back * 3f * Time.deltaTime);
 
-        //after state duration
-        if (fixedTime >= stateDuration)
-        {
 
-        }
+
+    }
+
+}
+
+public class BlockState : CombatBaseState
+{
+    public override void OnEnter(StateMachine _stateMachine)
+    {
+        base.OnEnter(_stateMachine);
+
+        Debug.Log("blocking");
+    }
+
+    public override void OnUpdate()
+    {
+        base.OnUpdate();
+
+
+
+    }
+
+}
+
+public class SlipState : CombatBaseState
+{
+    public override void OnEnter(StateMachine _stateMachine)
+    {
+        base.OnEnter(_stateMachine);
+
+        Debug.Log("dodge");
+    }
+
+    public override void OnUpdate()
+    {
+        base.OnUpdate();
+
+
+
+    }
+
+}
+
+public class SwitchSideState : CombatBaseState
+{
+    public override void OnEnter(StateMachine _stateMachine)
+    {
+        base.OnEnter(_stateMachine);
+
+        Debug.Log("switch side");
+    }
+
+    public override void OnUpdate()
+    {
+        base.OnUpdate();
+
+
 
     }
 
