@@ -7,16 +7,12 @@ using UnityEngine.EventSystems;
 
 public class CombatBaseState : State
 {
-    //this is to decide which action to do next
-    public bool shouldAttack;
-    public bool shouldDefend;
-    public bool shouldMove;
-
     //duration doesnt need to be the same as animation length, make it slightly shorter to transition early to next attack
     protected float stateDuration;
 
     protected PlayerBehavior playerBehavior;
     protected CharacterController controller;
+    protected Animator anim;
 
     public override void OnEnter(StateMachine _stateMachine)
     {
@@ -25,6 +21,7 @@ public class CombatBaseState : State
         //getting stuffs
         playerBehavior = stateMachine.GetComponent<PlayerBehavior>();
         controller = playerBehavior.GetComponent<CharacterController>();
+        anim = playerBehavior.GetComponent<Animator>();
 
     }
 
@@ -48,6 +45,7 @@ public class CombatIdleState : CombatBaseState
     {
         base.OnEnter(_stateMachine);
 
+        anim.SetTrigger("idle");
         Debug.Log("idle");
     }
 
@@ -55,7 +53,22 @@ public class CombatIdleState : CombatBaseState
     {
         base.OnUpdate();
 
+        if (playerBehavior.combatIntention == CombatIntention.Defend)
+        {
 
+        }
+        else if (playerBehavior.combatIntention == CombatIntention.Attack)
+        {
+
+        }
+        else if (playerBehavior.combatIntention == CombatIntention.MoveBackward)
+        {
+            stateMachine.SetNextState(new MoveBackwardState());
+        }
+        else if (playerBehavior.combatIntention == CombatIntention.MoveForward)
+        {
+            stateMachine.SetNextState(new MoveForwardState());
+        }
 
     }
 
@@ -67,6 +80,7 @@ public class MoveForwardState : CombatBaseState
     {
         base.OnEnter(_stateMachine);
 
+        anim.SetTrigger("move forward");
         Debug.Log("moving forward");
     }
 
@@ -76,7 +90,9 @@ public class MoveForwardState : CombatBaseState
 
         controller.Move(Vector3.forward * 3f * Time.deltaTime);
 
-
+        //if no need to move anymore
+        if (playerBehavior.combatIntention != CombatIntention.MoveForward)
+            stateMachine.SetNextStateToMain();
 
     }
 
@@ -88,6 +104,7 @@ public class MoveBackwardState : CombatBaseState
     {
         base.OnEnter(_stateMachine);
 
+        anim.SetTrigger("move backward");
         Debug.Log("moving backward");
     }
 
@@ -97,7 +114,9 @@ public class MoveBackwardState : CombatBaseState
 
         controller.Move(Vector3.back * 3f * Time.deltaTime);
 
-
+        //if no need to move anymore
+        if (playerBehavior.combatIntention != CombatIntention.MoveBackward)
+            stateMachine.SetNextStateToMain();
 
     }
 
@@ -109,6 +128,7 @@ public class BlockState : CombatBaseState
     {
         base.OnEnter(_stateMachine);
 
+        anim.SetTrigger("block");
         Debug.Log("blocking");
     }
 
@@ -116,7 +136,9 @@ public class BlockState : CombatBaseState
     {
         base.OnUpdate();
 
-
+        //if no need to block anymore
+        if (playerBehavior.combatIntention != CombatIntention.Defend)
+            stateMachine.SetNextStateToMain();
 
     }
 
@@ -128,6 +150,9 @@ public class SlipState : CombatBaseState
     {
         base.OnEnter(_stateMachine);
 
+        stateDuration = 0f;
+
+        anim.SetTrigger("dodge");
         Debug.Log("dodge");
     }
 
@@ -135,7 +160,8 @@ public class SlipState : CombatBaseState
     {
         base.OnUpdate();
 
-
+        if (fixedTime >= stateDuration)
+            stateMachine.SetNextStateToMain();
 
     }
 
@@ -147,6 +173,9 @@ public class SwitchSideState : CombatBaseState
     {
         base.OnEnter(_stateMachine);
 
+        stateDuration = 0f;
+
+        anim.SetTrigger("switch");
         Debug.Log("switch side");
     }
 
@@ -154,7 +183,8 @@ public class SwitchSideState : CombatBaseState
     {
         base.OnUpdate();
 
-
+        if (fixedTime >= stateDuration)
+            stateMachine.SetNextStateToMain();
 
     }
 

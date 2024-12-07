@@ -2,11 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum CombatIntention
+{
+    Idle,
+    MoveForward,
+    MoveBackward,
+    Attack,
+    Defend
+}
+
 public class PlayerBehavior : MonoBehaviour
 {
     public int playerID;
 
-    public StateMachine playerStateMachine;
+    public StateMachine stateMachine;
 
     public float currentHp;
     public float maxHp = 100f;
@@ -15,15 +24,19 @@ public class PlayerBehavior : MonoBehaviour
 
     public bool isDead = false;
 
+    //this is to decide which action to do next
+    public CombatIntention combatIntention;
+
     // Start is called before the first frame update
     void Start()
     {
-        playerStateMachine = GetComponent<StateMachine>();
+        stateMachine = GetComponent<StateMachine>();
 
         currentHp = maxHp;
         Actions.UpdatePlayerHealthBar(this);
         currentStamina = maxStamina;
         Actions.UpdatePlayerStaminaBar(this);
+
     }
 
     // Update is called once per frame
@@ -31,25 +44,17 @@ public class PlayerBehavior : MonoBehaviour
     {
 
         //quick manual testing
-        if (Input.GetKeyUp(KeyCode.Q))
-        {
-            ConsumeStamina(10);
-        }
-        if (Input.GetKeyUp(KeyCode.E))
-        {
-            TakeDamage(10);
-        }
         if (Input.GetMouseButton(0))
         {
-            playerStateMachine.SetNextState(new MoveForwardState());
+            combatIntention = CombatIntention.MoveForward;
         }
         else if (Input.GetMouseButton(1))
         {
-            playerStateMachine.SetNextState(new MoveBackwardState());
+            combatIntention = CombatIntention.MoveBackward;
         }
         else
         {
-            playerStateMachine.SetNextStateToMain();
+            combatIntention = CombatIntention.Idle;
         }
 
 
@@ -65,7 +70,7 @@ public class PlayerBehavior : MonoBehaviour
         if (currentStamina < maxStamina)
         {
             //stamina doesnt regen while blocking
-            if (playerStateMachine.currentState.GetType() == typeof(BlockState))
+            if (stateMachine.currentState.GetType() == typeof(BlockState))
                 return;
             
             currentStamina += 1 * Time.deltaTime;
