@@ -24,10 +24,22 @@ public class PlayerBehavior : MonoBehaviour
     public float currentStamina;
     public float maxStamina = 100f;
 
-    public bool isDead = false;
+    private bool isDead = false;
 
     //this is to decide which action to do next
     public CombatIntention combatIntention;
+
+    private void OnEnable()
+    {
+        //subscribing to actions
+        Actions.TimeOut += OnTimerOut;
+    }
+
+    private void OnDisable()
+    {
+        //unsubscribing to actions
+        Actions.TimeOut -= OnTimerOut;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -55,7 +67,7 @@ public class PlayerBehavior : MonoBehaviour
         }
         else
         {
-            combatIntention = CombatIntention.Attack;
+            combatIntention = CombatIntention.Defend;
         }
 
 
@@ -74,25 +86,83 @@ public class PlayerBehavior : MonoBehaviour
             if (stateMachine.currentState.GetType() == typeof(BlockState))
                 return;
             
-            currentStamina += 1 * Time.deltaTime;
+            currentStamina += 3f * Time.deltaTime;
             Actions.UpdatePlayerStaminaBar(this);
         }
 
     }
 
-    public void TakeDamage(float damage)
+
+
+
+
+    public void TakeHit(float hitDamage, string hitType)
     {
         if (!isDead)
         {
-            currentHp = Mathf.Clamp(currentHp - damage, 0f, maxHp);
-            Actions.UpdatePlayerHealthBar(this);
+            //if blocking, and has enough stamina to tank the hit
+            if (stateMachine.currentState.GetType() == typeof(BlockState) && currentStamina >= hitDamage)
+            {
+                ConsumeStamina(hitDamage);
+                return;
+            }
+            //if switching
+            else if (stateMachine.currentState.GetType() == typeof(SwitchState))
+            {
+                return;
+            }
+            //if dodging
+            else if (stateMachine.currentState.GetType() == typeof(DodgeState))
+            {
+                if (hitType == "low")
+                {
+                    TakeDamage(hitDamage * 1.2f);
+                }
+            }
+            //if doing anything else
+            else
+            {
+                if (hitType == "high")
+                {
+                    TakeDamage(hitDamage * 1.2f);
+                    stateMachine.SetNextState(new HitHeadState());
+                }
+                else if (hitType == "low")
+                {
+                    TakeDamage(hitDamage);
+                    stateMachine.SetNextState(new HitBodyState());
+                }
+            }
+
         }
     }
 
+
+
+
+    public void TakeDamage(float damage)
+    {
+        currentHp = Mathf.Clamp(currentHp - damage * 1f, 0f, maxHp);
+        Actions.UpdatePlayerHealthBar(this);
+    }
     public void ConsumeStamina(float stamina)
     {
         currentStamina = Mathf.Clamp(currentStamina - stamina, 0f, maxStamina);
         Actions.UpdatePlayerStaminaBar(this);
+    }
+
+
+
+
+
+
+    public void SpawnHitboxHigh(float damage)
+    {
+        //instantiate or use object pool here
+    }
+    public void SpawnHitboxLow(float damage)
+    {
+        //instantiate or use object pool here
     }
 
 
@@ -106,12 +176,18 @@ public class PlayerBehavior : MonoBehaviour
 
         Actions.GameOver(otherPlayer);
     }
-
-    private void Win()
+    private void OnTimerOut()
     {
-        stateMachine.SetNextState(new WinState());
-
-        Actions.GameOver(this);
+        if (this.currentHp > otherPlayer.currentHp)
+        {
+            stateMachine.SetNextState(new WinState());
+            Actions.GameOver(this);
+        }
+        else if (this.currentHp == otherPlayer.currentHp)
+        {
+            Actions.GameOver(null);
+        }
+        
     }
 
 

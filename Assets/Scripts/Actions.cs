@@ -10,6 +10,7 @@ public static class Actions
 
     public static Action<LevelManager> UpdateRoundTimer;
 
+    public static Action TimeOut;
     public static Action<PlayerBehavior> GameOver;
 
 }

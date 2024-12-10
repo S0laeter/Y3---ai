@@ -22,6 +22,9 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI roundText;
     public TextMeshProUGUI timerText;
 
+    //announce end game
+    public GameObject gameOverText;
+
     // Start is called before the first frame update
     private void OnEnable()
     {
@@ -29,6 +32,7 @@ public class UIManager : MonoBehaviour
         Actions.UpdatePlayerHealthBar += UpdateHealthBar;
         Actions.UpdatePlayerStaminaBar += UpdateStaminaBar;
         Actions.UpdateRoundTimer += UpdateRoundTimer;
+        Actions.GameOver += GameOver;
     }
 
     private void OnDisable()
@@ -37,12 +41,13 @@ public class UIManager : MonoBehaviour
         Actions.UpdatePlayerHealthBar -= UpdateHealthBar;
         Actions.UpdatePlayerStaminaBar -= UpdateStaminaBar;
         Actions.UpdateRoundTimer -= UpdateRoundTimer;
+        Actions.GameOver -= GameOver;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        gameOverText.SetActive(false);
     }
 
     private void UpdateHealthBar(PlayerBehavior player)
@@ -96,5 +101,16 @@ public class UIManager : MonoBehaviour
         float seconds = Mathf.Clamp(Mathf.Floor(levelManager.currentTime % 60), 0f, 60f);
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
+
+    private void GameOver(PlayerBehavior winner)
+    {
+        gameOverText.SetActive(true);
+
+        if (winner == null)
+            gameOverText.GetComponent<TextMeshProUGUI>().text = "game over, draw";
+        else
+            gameOverText.GetComponent<TextMeshProUGUI>().text = "game over, " + winner.name + " won";
+    }
+
 
 }
