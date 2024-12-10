@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -10,6 +11,18 @@ public class LevelManager : MonoBehaviour
     public float currentTime;
     public float maxTime = 180f;
 
+    private void OnEnable()
+    {
+        //subscribing to actions
+        Actions.GameOver += GameOver;
+    }
+
+    private void OnDisable()
+    {
+        //unsubscribing to actions
+        Actions.GameOver -= GameOver;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +30,7 @@ public class LevelManager : MonoBehaviour
         currentTime = maxTime;
 
         Actions.UpdateRoundTimer(this);
+
     }
 
     // Update is called once per frame
@@ -34,6 +48,20 @@ public class LevelManager : MonoBehaviour
 
             Actions.UpdateRoundTimer(this);
         }
+    }
+
+    private void GameOver(PlayerBehavior winner)
+    {
+
+
+        Debug.Log(winner.name + " won. its over, time to go home");
+    }
+
+    private IEnumerator GameOver()
+    {
+        yield return new WaitForSeconds(3f);
+
+        SceneManager.LoadScene("Menu");
     }
 
 }

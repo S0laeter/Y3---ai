@@ -15,6 +15,8 @@ public class PlayerBehavior : MonoBehaviour
 {
     public int playerID;
 
+    public PlayerBehavior otherPlayer;
+
     public StateMachine stateMachine;
 
     public float currentHp;
@@ -36,14 +38,13 @@ public class PlayerBehavior : MonoBehaviour
         Actions.UpdatePlayerHealthBar(this);
         currentStamina = maxStamina;
         Actions.UpdatePlayerStaminaBar(this);
-
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        //quick manual testing
+        //quick manual testing, delete later
         if (Input.GetMouseButton(0))
         {
             combatIntention = CombatIntention.MoveForward;
@@ -54,7 +55,7 @@ public class PlayerBehavior : MonoBehaviour
         }
         else
         {
-            combatIntention = CombatIntention.Idle;
+            combatIntention = CombatIntention.Attack;
         }
 
 
@@ -63,7 +64,7 @@ public class PlayerBehavior : MonoBehaviour
         {
             currentHp = 0;
             isDead = true;
-            Die();
+            Lose();
             return;
         }
 
@@ -94,11 +95,23 @@ public class PlayerBehavior : MonoBehaviour
         Actions.UpdatePlayerStaminaBar(this);
     }
 
-    private void Die()
+
+
+
+
+
+    private void Lose()
     {
+        stateMachine.SetNextState(new LoseState());
 
+        Actions.GameOver(otherPlayer);
+    }
 
-        Debug.Log(this.name + " died. its over, go home");
+    private void Win()
+    {
+        stateMachine.SetNextState(new WinState());
+
+        Actions.GameOver(this);
     }
 
 
