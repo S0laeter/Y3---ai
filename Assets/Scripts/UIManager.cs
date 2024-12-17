@@ -23,7 +23,7 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI timerText;
 
     //announce end game
-    public GameObject gameOverText;
+    public TextMeshProUGUI gameOverText;
 
     // Start is called before the first frame update
     private void OnEnable()
@@ -47,7 +47,7 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gameOverText.SetActive(false);
+
     }
 
     private void UpdateHealthBar(PlayerBehavior player)
@@ -104,12 +104,10 @@ public class UIManager : MonoBehaviour
 
     private void GameOver(PlayerBehavior winner)
     {
-        gameOverText.SetActive(true);
-
         if (winner == null)
-            gameOverText.GetComponent<TextMeshProUGUI>().text = "game over, draw";
+            gameOverText.text = "game over, draw";
         else
-            gameOverText.GetComponent<TextMeshProUGUI>().text = "game over, " + winner.name + " won";
+            gameOverText.text = "game over, " + winner.name + " won";
     }
 
 

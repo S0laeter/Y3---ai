@@ -72,15 +72,20 @@ public class LevelManager : MonoBehaviour
     {
         StopCoroutine(TimerCountdown());
 
-        Debug.Log(winner.name + " won. its over, time to go home");
-        
+        if (winner == null)
+            Debug.Log("its a draw. its over, time to go home");
+        else
+            Debug.Log(winner.name + " won. its over, time to go home");
+
         StartCoroutine(WaitAndBackToMenu());
     }
     private IEnumerator WaitAndBackToMenu()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
 
         SceneManager.LoadScene("Menu");
     }
+
+
 
 }

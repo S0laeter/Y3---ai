@@ -5,6 +5,8 @@ using UnityEngine;
 public enum CombatIntention
 {
     Idle,
+    Won,
+    Lost,
     MoveForward,
     MoveBackward,
     Attack,
@@ -16,6 +18,7 @@ public class PlayerBehavior : MonoBehaviour
     public int playerID;
 
     public PlayerBehavior otherPlayer;
+    private float distanceToOtherPlayer;
 
     public StateMachine stateMachine;
 
@@ -23,8 +26,6 @@ public class PlayerBehavior : MonoBehaviour
     public float maxHp = 100f;
     public float currentStamina;
     public float maxStamina = 100f;
-
-    private bool isDead = false;
 
     //this is to decide which action to do next
     public CombatIntention combatIntention;
@@ -55,30 +56,57 @@ public class PlayerBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //if endgame, nevermind
+        if (combatIntention == CombatIntention.Won || combatIntention == CombatIntention.Lost)
+            return;
 
-        //quick manual testing, delete later
-        if (Input.GetMouseButton(0))
-        {
-            combatIntention = CombatIntention.MoveForward;
-        }
-        else if (Input.GetMouseButton(1))
-        {
-            combatIntention = CombatIntention.MoveBackward;
-        }
-        else
-        {
-            combatIntention = CombatIntention.Defend;
-        }
+        //just to make sure they stay in line
+        this.transform.position = new Vector3(0f, this.transform.position.y, this.transform.position.z);
+        
+        //calculate distance
+        distanceToOtherPlayer = Vector3.Distance(otherPlayer.transform.position, transform.position);
 
 
-
-        if (currentHp <= 0 && !isDead)
+        //if die
+        if (currentHp <= 0 && combatIntention != CombatIntention.Lost)
         {
             currentHp = 0;
-            isDead = true;
+
             Lose();
+            otherPlayer.Win();
+            Actions.GameOver(otherPlayer);
+
             return;
         }
+
+
+
+
+        //ai behavior stuffs here, couldve made it another script but whatever
+        switch (playerID)
+        {
+            //player 1, passive
+            case 1:
+                combatIntention = CombatIntention.Defend;
+                break;
+
+            //player 2, aggressive
+            case 2:
+                if (distanceToOtherPlayer > 1f)
+                    combatIntention = CombatIntention.MoveForward;
+                else
+                {
+                    combatIntention = CombatIntention.Attack;
+                }
+                break;
+
+            default:
+                break;
+
+        }
+
+
+
 
         if (currentStamina < maxStamina)
         {
@@ -96,9 +124,10 @@ public class PlayerBehavior : MonoBehaviour
 
 
 
-    public void TakeHit(float hitDamage, string hitType)
+    public void TakeHit(float hitDamage, int hitType)
     {
-        if (!isDead)
+        //if still alive, can take the hit
+        if (combatIntention != CombatIntention.Lost)
         {
             //if blocking, and has enough stamina to tank the hit
             if (stateMachine.currentState.GetType() == typeof(BlockState) && currentStamina >= hitDamage)
@@ -114,7 +143,7 @@ public class PlayerBehavior : MonoBehaviour
             //if dodging
             else if (stateMachine.currentState.GetType() == typeof(DodgeState))
             {
-                if (hitType == "low")
+                if (hitType == 0)
                 {
                     TakeDamage(hitDamage * 1.2f);
                 }
@@ -122,12 +151,12 @@ public class PlayerBehavior : MonoBehaviour
             //if doing anything else
             else
             {
-                if (hitType == "high")
+                if (hitType == 1)
                 {
                     TakeDamage(hitDamage * 1.2f);
                     stateMachine.SetNextState(new HitHeadState());
                 }
-                else if (hitType == "low")
+                else if (hitType == 0)
                 {
                     TakeDamage(hitDamage);
                     stateMachine.SetNextState(new HitBodyState());
@@ -156,14 +185,6 @@ public class PlayerBehavior : MonoBehaviour
 
 
 
-    public void SpawnHitboxHigh(float damage)
-    {
-        //instantiate or use object pool here
-    }
-    public void SpawnHitboxLow(float damage)
-    {
-        //instantiate or use object pool here
-    }
 
 
 
@@ -172,20 +193,29 @@ public class PlayerBehavior : MonoBehaviour
 
     private void Lose()
     {
+        combatIntention = CombatIntention.Lost;
         stateMachine.SetNextState(new LoseState());
-
-        Actions.GameOver(otherPlayer);
+    }
+    public void Win()
+    {
+        combatIntention = CombatIntention.Won;
+        stateMachine.SetNextState(new WinState());
     }
     private void OnTimerOut()
     {
         if (this.currentHp > otherPlayer.currentHp)
         {
-            stateMachine.SetNextState(new WinState());
+            Win();
             Actions.GameOver(this);
         }
         else if (this.currentHp == otherPlayer.currentHp)
         {
+            Win();
             Actions.GameOver(null);
+        }
+        else if (this.currentHp < otherPlayer.currentHp)
+        {
+            Lose();
         }
         
     }

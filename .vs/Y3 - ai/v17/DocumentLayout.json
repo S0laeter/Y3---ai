@@ -3,7 +3,7 @@
   "WorkspaceRootPath": "E:\\Unity stuffs\\Y3 - ai\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{351F5504-21CB-DF90-5BD6-3680667CAFB9}|Assembly-CSharp.csproj|e:\\unity stuffs\\y3 - ai\\assets\\scripts\\playerbehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{351F5504-21CB-DF90-5BD6-3680667CAFB9}|Assembly-CSharp.csproj|E:\\Unity stuffs\\Y3 - ai\\assets\\scripts\\playerbehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{351F5504-21CB-DF90-5BD6-3680667CAFB9}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playerbehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -11,12 +11,8 @@
       "RelativeMoniker": "D:0:0:{351F5504-21CB-DF90-5BD6-3680667CAFB9}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\combatbasestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{351F5504-21CB-DF90-5BD6-3680667CAFB9}|Assembly-CSharp.csproj|E:\\Unity stuffs\\Y3 - ai\\assets\\scripts\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{351F5504-21CB-DF90-5BD6-3680667CAFB9}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{351F5504-21CB-DF90-5BD6-3680667CAFB9}|Assembly-CSharp.csproj|E:\\Unity stuffs\\Y3 - ai\\assets\\scripts\\levelmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{351F5504-21CB-DF90-5BD6-3680667CAFB9}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\levelmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{351F5504-21CB-DF90-5BD6-3680667CAFB9}|Assembly-CSharp.csproj|E:\\Unity stuffs\\Y3 - ai\\assets\\scripts\\hitboxmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{351F5504-21CB-DF90-5BD6-3680667CAFB9}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\hitboxmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,31 +22,20 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "LevelManager.cs",
-              "DocumentMoniker": "E:\\Unity stuffs\\Y3 - ai\\Assets\\Scripts\\LevelManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\LevelManager.cs",
-              "ToolTip": "E:\\Unity stuffs\\Y3 - ai\\Assets\\Scripts\\LevelManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\LevelManager.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAhAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-01T08:21:19.251Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "UIManager.cs",
-              "DocumentMoniker": "E:\\Unity stuffs\\Y3 - ai\\Assets\\Scripts\\UIManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\UIManager.cs",
-              "ToolTip": "E:\\Unity stuffs\\Y3 - ai\\Assets\\Scripts\\UIManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\UIManager.cs",
-              "ViewState": "AQIAAFQAAAAAAAAAAAAowG8AAABlAAAA",
+              "Title": "HitboxManager.cs",
+              "DocumentMoniker": "E:\\Unity stuffs\\Y3 - ai\\Assets\\Scripts\\HitboxManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\HitboxManager.cs",
+              "ToolTip": "E:\\Unity stuffs\\Y3 - ai\\Assets\\Scripts\\HitboxManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\HitboxManager.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAB2AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-10T08:19:54.268Z"
+              "WhenOpened": "2024-12-17T07:10:58.279Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -60,9 +45,10 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\CombatBaseState.cs",
               "ToolTip": "E:\\Unity stuffs\\Y3 - ai\\Assets\\Scripts\\CombatBaseState.cs",
               "RelativeToolTip": "Assets\\Scripts\\CombatBaseState.cs",
-              "ViewState": "AQIAAB8AAAAAAAAAAAAAAD4AAAAaAAAA",
+              "ViewState": "AQIAAN8AAAAAAAAAAAAUwOYAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-09T14:49:28.282Z"
+              "WhenOpened": "2024-11-09T14:49:28.282Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -72,7 +58,7 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerBehavior.cs",
               "ToolTip": "E:\\Unity stuffs\\Y3 - ai\\Assets\\Scripts\\PlayerBehavior.cs",
               "RelativeToolTip": "Assets\\Scripts\\PlayerBehavior.cs",
-              "ViewState": "AQIAAJUAAAAAAAAAAAAAAKAAAAAtAAAA",
+              "ViewState": "AQIAAH0AAAAAAAAAAAAAAJMAAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-09T14:12:06.434Z",
               "EditorCaption": ""

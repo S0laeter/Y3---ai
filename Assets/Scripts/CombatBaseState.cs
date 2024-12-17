@@ -120,7 +120,6 @@ public class LoseState : CombatBaseState
         base.OnEnter(_stateMachine);
 
         anim.SetTrigger("lose");
-        Debug.Log(player.name + " lost");
     }
 
     public override void OnUpdate()
@@ -142,7 +141,6 @@ public class WinState : CombatBaseState
         base.OnEnter(_stateMachine);
 
         anim.SetTrigger("win");
-        Debug.Log(player.name + " won");
     }
 
     public override void OnUpdate()
@@ -173,7 +171,7 @@ public class MoveForwardState : CombatBaseState
     {
         base.OnUpdate();
 
-        controller.Move(player.transform.forward * 3f * Time.deltaTime);
+        controller.Move(player.transform.forward * 1.5f * Time.deltaTime);
 
         //if no need to move anymore
         if (player.combatIntention != CombatIntention.MoveForward)
@@ -206,7 +204,7 @@ public class MoveBackwardState : CombatBaseState
     {
         base.OnUpdate();
 
-        controller.Move(-player.transform.forward * 3f * Time.deltaTime);
+        controller.Move(-player.transform.forward * 1f * Time.deltaTime);
 
         //if no need to move anymore
         if (player.combatIntention != CombatIntention.MoveBackward)
@@ -230,7 +228,7 @@ public class BlockState : CombatBaseState
     {
         base.OnEnter(_stateMachine);
 
-        stateDuration = 3f;
+        stateDuration = 2f;
 
         anim.SetTrigger("block");
         Debug.Log(player.name + " blocking");
@@ -360,7 +358,7 @@ public class LeftStraightState : CombatBaseState
 
         stateDuration = 0.35f;
 
-        player.ConsumeStamina(6f);
+        player.ConsumeStamina(8f);
 
         anim.SetTrigger("left straight");
         Debug.Log(player.name + " uses left straight");
@@ -385,7 +383,7 @@ public class LeftHookState : CombatBaseState
 
         stateDuration = 0.55f;
 
-        player.ConsumeStamina(8f);
+        player.ConsumeStamina(10f);
 
         anim.SetTrigger("left hook");
         Debug.Log(player.name + " uses left hook");
@@ -410,7 +408,7 @@ public class LeftBodyState : CombatBaseState
 
         stateDuration = 0.55f;
 
-        player.ConsumeStamina(8f);
+        player.ConsumeStamina(10f);
 
         anim.SetTrigger("left body");
         Debug.Log(player.name + " uses left body");
