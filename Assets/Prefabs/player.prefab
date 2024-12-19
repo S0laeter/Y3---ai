@@ -151,6 +151,8 @@ MonoBehaviour:
   playerID: 1
   otherPlayer: {fileID: 0}
   stateMachine: {fileID: 0}
+  controller: {fileID: 0}
+  anim: {fileID: 0}
   currentHp: 0
   maxHp: 100
   currentStamina: 0

@@ -46,7 +46,7 @@ public class CombatIdleState : CombatBaseState
     {
         base.OnEnter(_stateMachine);
 
-        player.transform.position = new Vector3(0f, player.transform.position.y, player.transform.position.z);
+        player.MoveToCentre();
         Debug.Log(player.name + " idle");
     }
 

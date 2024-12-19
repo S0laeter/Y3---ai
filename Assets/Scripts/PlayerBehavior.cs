@@ -32,6 +32,8 @@ public class PlayerBehavior : MonoBehaviour
     //this is to decide which action to do next
     public CombatIntention combatIntention;
 
+    public bool isEndgame = false;
+
     private void OnEnable()
     {
         //subscribing to actions
@@ -61,12 +63,9 @@ public class PlayerBehavior : MonoBehaviour
     void Update()
     {
         //if endgame, nevermind
-        if (combatIntention == CombatIntention.Won || combatIntention == CombatIntention.Lost)
+        if (isEndgame)
             return;
 
-        //just to make sure they stay in line
-        this.transform.position = new Vector3(0f, this.transform.position.y, this.transform.position.z);
-        
         //calculate distance
         distanceToOtherPlayer = Vector3.Distance(otherPlayer.transform.position, transform.position);
 
@@ -129,7 +128,7 @@ public class PlayerBehavior : MonoBehaviour
 
                 if (currentStamina <= 20f)
                 {
-                    StartCoroutine(DoSomethingForSomeTime(CombatIntention.MoveBackward, 5f));
+                    StartCoroutine(DoSomethingForSomeTime(CombatIntention.MoveBackward, 7f));
                 }
                 else if (currentStamina > 20f && combatIntention != CombatIntention.MoveBackward)
                 {
@@ -162,13 +161,26 @@ public class PlayerBehavior : MonoBehaviour
         }
 
     }
+
+
+
     public IEnumerator DoSomethingForSomeTime(CombatIntention whatNow, float forHowLong)
     {
         combatIntention = whatNow;
 
         yield return new WaitForSeconds(forHowLong);
 
-        combatIntention = CombatIntention.Idle;
+        if (!isEndgame)
+            combatIntention = CombatIntention.Idle;
+    }
+    //just in case player somehow drifts away from the centre line
+    public void MoveToCentre()
+    {
+        Vector3 offset = new Vector3(0f, transform.position.y, transform.position.z) - transform.position;
+        if (offset.magnitude > 0.1f)
+        {
+            controller.Move(offset * 100f * Time.deltaTime);
+        }
     }
 
 
@@ -184,7 +196,7 @@ public class PlayerBehavior : MonoBehaviour
             if (stateMachine.currentState.GetType() == typeof(BlockState) && currentStamina >= hitDamage)
             {
                 controller.Move(-transform.forward * 0.1f);
-                ConsumeStamina(hitDamage);
+                ConsumeStamina(hitDamage * 0.5f);
                 return;
             }
             //if switching
@@ -197,7 +209,6 @@ public class PlayerBehavior : MonoBehaviour
             {
                 if (hitType == 0)
                 {
-                    controller.Move(-transform.forward * 0.1f);
                     TakeDamage(hitDamage * 1.2f);
                 }
             }
@@ -206,13 +217,11 @@ public class PlayerBehavior : MonoBehaviour
             {
                 if (hitType == 1)
                 {
-                    controller.Move(-transform.forward * 0.1f);
                     TakeDamage(hitDamage * 1.2f);
                     stateMachine.SetNextState(new HitHeadState());
                 }
                 else if (hitType == 0)
                 {
-                    controller.Move(-transform.forward * 0.1f);
                     TakeDamage(hitDamage);
                     stateMachine.SetNextState(new HitBodyState());
                 }
@@ -248,11 +257,13 @@ public class PlayerBehavior : MonoBehaviour
 
     private void Lose()
     {
+        isEndgame = true;
         combatIntention = CombatIntention.Lost;
         stateMachine.SetNextState(new LoseState());
     }
     public void Win()
     {
+        isEndgame = true;
         combatIntention = CombatIntention.Won;
         stateMachine.SetNextState(new WinState());
     }
