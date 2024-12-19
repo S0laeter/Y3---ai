@@ -21,6 +21,8 @@ public class PlayerBehavior : MonoBehaviour
     private float distanceToOtherPlayer;
 
     public StateMachine stateMachine;
+    public CharacterController controller;
+    public Animator anim;
 
     public float currentHp;
     public float maxHp = 100f;
@@ -46,6 +48,8 @@ public class PlayerBehavior : MonoBehaviour
     void Start()
     {
         stateMachine = GetComponent<StateMachine>();
+        controller = GetComponent<CharacterController>();
+        anim = GetComponent<Animator>();
 
         currentHp = maxHp;
         Actions.UpdatePlayerHealthBar(this);
@@ -85,20 +89,63 @@ public class PlayerBehavior : MonoBehaviour
         //ai behavior stuffs here, couldve made it another script but whatever
         switch (playerID)
         {
-            //player 1, passive
-            case 1:
-                combatIntention = CombatIntention.Defend;
-                break;
 
-            //player 2, aggressive
-            case 2:
-                if (distanceToOtherPlayer > 1f)
-                    combatIntention = CombatIntention.MoveForward;
+
+
+            //player 1, passive, reactive asf
+            case 1:
+
+                //combatIntention = CombatIntention.Idle;
+                if (otherPlayer.combatIntention == CombatIntention.Attack)
+                {
+                    combatIntention = CombatIntention.Defend;
+                }
                 else
                 {
-                    combatIntention = CombatIntention.Attack;
+                    if (currentStamina <= 20f)
+                    {
+                        combatIntention = CombatIntention.MoveBackward;
+                    }
+                    else
+                    {
+                        //move closer and beat em up
+                        if (distanceToOtherPlayer > 1f)
+                            combatIntention = CombatIntention.MoveForward;
+                        else
+                        {
+                            combatIntention = CombatIntention.Attack;
+                        }
+                    }
                 }
+
                 break;
+
+
+
+
+
+            //player 2, aggressive, kinda braindead
+            case 2:
+
+                if (currentStamina <= 20f)
+                {
+                    StartCoroutine(DoSomethingForSomeTime(CombatIntention.MoveBackward, 5f));
+                }
+                else if (currentStamina > 20f && combatIntention != CombatIntention.MoveBackward)
+                {
+                    //move closer and beat em up
+                    if (distanceToOtherPlayer > 1f)
+                        combatIntention = CombatIntention.MoveForward;
+                    else
+                    {
+                        combatIntention = CombatIntention.Attack;
+                    }
+                }
+
+                break;
+
+
+
 
             default:
                 break;
@@ -110,14 +157,18 @@ public class PlayerBehavior : MonoBehaviour
 
         if (currentStamina < maxStamina)
         {
-            //stamina doesnt regen while blocking
-            if (stateMachine.currentState.GetType() == typeof(BlockState))
-                return;
-            
-            currentStamina += 3f * Time.deltaTime;
+            currentStamina += 7f * Time.deltaTime;
             Actions.UpdatePlayerStaminaBar(this);
         }
 
+    }
+    public IEnumerator DoSomethingForSomeTime(CombatIntention whatNow, float forHowLong)
+    {
+        combatIntention = whatNow;
+
+        yield return new WaitForSeconds(forHowLong);
+
+        combatIntention = CombatIntention.Idle;
     }
 
 
@@ -132,6 +183,7 @@ public class PlayerBehavior : MonoBehaviour
             //if blocking, and has enough stamina to tank the hit
             if (stateMachine.currentState.GetType() == typeof(BlockState) && currentStamina >= hitDamage)
             {
+                controller.Move(-transform.forward * 0.1f);
                 ConsumeStamina(hitDamage);
                 return;
             }
@@ -145,6 +197,7 @@ public class PlayerBehavior : MonoBehaviour
             {
                 if (hitType == 0)
                 {
+                    controller.Move(-transform.forward * 0.1f);
                     TakeDamage(hitDamage * 1.2f);
                 }
             }
@@ -153,11 +206,13 @@ public class PlayerBehavior : MonoBehaviour
             {
                 if (hitType == 1)
                 {
+                    controller.Move(-transform.forward * 0.1f);
                     TakeDamage(hitDamage * 1.2f);
                     stateMachine.SetNextState(new HitHeadState());
                 }
                 else if (hitType == 0)
                 {
+                    controller.Move(-transform.forward * 0.1f);
                     TakeDamage(hitDamage);
                     stateMachine.SetNextState(new HitBodyState());
                 }

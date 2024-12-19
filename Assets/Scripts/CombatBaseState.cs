@@ -21,8 +21,8 @@ public class CombatBaseState : State
 
         //getting stuffs
         player = stateMachine.GetComponent<PlayerBehavior>();
-        controller = player.GetComponent<CharacterController>();
-        anim = player.GetComponent<Animator>();
+        controller = player.controller;
+        anim = player.anim;
 
     }
 
@@ -46,6 +46,7 @@ public class CombatIdleState : CombatBaseState
     {
         base.OnEnter(_stateMachine);
 
+        player.transform.position = new Vector3(0f, player.transform.position.y, player.transform.position.z);
         Debug.Log(player.name + " idle");
     }
 
