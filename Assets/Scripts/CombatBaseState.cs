@@ -46,13 +46,15 @@ public class CombatIdleState : CombatBaseState
     {
         base.OnEnter(_stateMachine);
 
-        player.MoveToCentre();
         Debug.Log(player.name + " idle");
     }
 
     public override void OnUpdate()
     {
         base.OnUpdate();
+
+        //stick to the centre line
+        player.MoveToCentre();
 
         //should try to defend
         if (player.combatIntention == CombatIntention.Defend)
@@ -164,6 +166,9 @@ public class MoveForwardState : CombatBaseState
 
         stateDuration = 5f;
 
+        //stick to the centre line
+        player.MoveToCentre();
+
         anim.SetTrigger("move forward");
         Debug.Log(player.name + " moving forward");
     }
@@ -196,6 +201,9 @@ public class MoveBackwardState : CombatBaseState
         base.OnEnter(_stateMachine);
 
         stateDuration = 5f;
+
+        //stick to the centre line
+        player.MoveToCentre();
 
         anim.SetTrigger("move backward");
         Debug.Log(player.name + " moving backward");

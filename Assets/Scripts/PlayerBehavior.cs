@@ -69,7 +69,6 @@ public class PlayerBehavior : MonoBehaviour
         //calculate distance
         distanceToOtherPlayer = Vector3.Distance(otherPlayer.transform.position, transform.position);
 
-
         //if die
         if (currentHp <= 0 && combatIntention != CombatIntention.Lost)
         {
@@ -179,7 +178,7 @@ public class PlayerBehavior : MonoBehaviour
         Vector3 offset = new Vector3(0f, transform.position.y, transform.position.z) - transform.position;
         if (offset.magnitude > 0.1f)
         {
-            controller.Move(offset * 100f * Time.deltaTime);
+            controller.Move(offset * 10f * Time.deltaTime);
         }
     }
 
