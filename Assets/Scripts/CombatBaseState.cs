@@ -56,23 +56,15 @@ public class CombatIdleState : CombatBaseState
         //stick to the centre line
         player.MoveToCentre();
 
-        //should try to defend
-        if (player.combatIntention == CombatIntention.Defend)
+        //should try to dodge
+        if (player.combatIntention == CombatIntention.Dodge)
         {
-            switch (UnityEngine.Random.Range(0, 2))
-            {
-                case 0:
-                    stateMachine.SetNextState(new BlockState());
-                    break;
-                case 1:
-                    stateMachine.SetNextState(new DodgeState());
-                    break;
-                /*case 2:
-                    stateMachine.SetNextState(new SwitchState());
-                    break;*/
-                default:
-                    break;
-            }
+            stateMachine.SetNextState(new DodgeState());
+        }
+        //should try to defend
+        else if (player.combatIntention == CombatIntention.Block)
+        {
+            stateMachine.SetNextState(new BlockState());
         }
         //should try to attack high
         else if (player.combatIntention == CombatIntention.AttackHigh)
@@ -257,7 +249,7 @@ public class BlockState : CombatBaseState
         base.OnUpdate();
 
         //if no need to block anymore
-        if (player.combatIntention != CombatIntention.Defend)
+        if (player.combatIntention != CombatIntention.Block)
         {
             stateMachine.SetNextStateToMain();
         }

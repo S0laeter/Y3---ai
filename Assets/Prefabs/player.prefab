@@ -158,6 +158,7 @@ MonoBehaviour:
   currentStamina: 0
   maxStamina: 100
   combatIntention: 0
+  isEndgame: 0
 --- !u!114 &8986630995955958475
 MonoBehaviour:
   m_ObjectHideFlags: 0

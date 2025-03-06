@@ -11,7 +11,8 @@ public enum CombatIntention
     MoveBackward,
     AttackHigh,
     AttackLow,
-    Defend
+    Block,
+    Dodge
 }
 
 public class PlayerBehavior : MonoBehaviour
