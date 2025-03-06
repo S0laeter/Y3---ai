@@ -9,7 +9,8 @@ public enum CombatIntention
     Lost,
     MoveForward,
     MoveBackward,
-    Attack,
+    AttackHigh,
+    AttackLow,
     Defend
 }
 
@@ -84,7 +85,7 @@ public class PlayerBehavior : MonoBehaviour
 
 
 
-        //ai behavior stuffs here, couldve made it another script but whatever
+        /*//ai behavior stuffs here, couldve made it another script but whatever
         switch (playerID)
         {
 
@@ -148,7 +149,7 @@ public class PlayerBehavior : MonoBehaviour
             default:
                 break;
 
-        }
+        }*/
 
 
 
@@ -172,6 +173,7 @@ public class PlayerBehavior : MonoBehaviour
         if (!isEndgame)
             combatIntention = CombatIntention.Idle;
     }
+
     //just in case player somehow drifts away from the centre line
     public void MoveToCentre()
     {

@@ -74,10 +74,10 @@ public class CombatIdleState : CombatBaseState
                     break;
             }
         }
-        //should try to attack
-        else if (player.combatIntention == CombatIntention.Attack)
+        //should try to attack high
+        else if (player.combatIntention == CombatIntention.AttackHigh)
         {
-            switch (UnityEngine.Random.Range(0, 6))
+            switch (UnityEngine.Random.Range(0, 4))
             {
                 case 0:
                     stateMachine.SetNextState(new LeftStraightState());
@@ -86,15 +86,24 @@ public class CombatIdleState : CombatBaseState
                     stateMachine.SetNextState(new LeftHookState());
                     break;
                 case 2:
-                    stateMachine.SetNextState(new LeftBodyState());
-                    break;
-                case 3:
                     stateMachine.SetNextState(new RightStraightState());
                     break;
-                case 4:
+                case 3:
                     stateMachine.SetNextState(new RightHookState());
                     break;
-                case 5:
+                default:
+                    break;
+            }
+        }
+        //should try to attack low
+        else if (player.combatIntention == CombatIntention.AttackLow)
+        {
+            switch (UnityEngine.Random.Range(0, 2))
+            {
+                case 0:
+                    stateMachine.SetNextState(new LeftBodyState());
+                    break;
+                case 1:
                     stateMachine.SetNextState(new RightBodyState());
                     break;
                 default:

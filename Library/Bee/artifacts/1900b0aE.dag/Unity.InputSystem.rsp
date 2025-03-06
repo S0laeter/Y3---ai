@@ -126,6 +126,8 @@
 -define:UNITY_INPUT_SYSTEM_ENABLE_UI
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
+-r:"Assets/BehaviorBricks/Editor/Bin/BBEditor.dll"
+-r:"Assets/BehaviorBricks/Runtime/BehaviorBricks.dll"
 -r:"E:/Unity/2022.3.4f1/Editor/Data/Managed/UnityEditor.Graphs.dll"
 -r:"E:/Unity/2022.3.4f1/Editor/Data/Managed/UnityEngine/UnityEditor.CoreModule.dll"
 -r:"E:/Unity/2022.3.4f1/Editor/Data/Managed/UnityEngine/UnityEditor.DeviceSimulatorModule.dll"

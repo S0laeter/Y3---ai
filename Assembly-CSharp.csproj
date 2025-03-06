@@ -58,15 +58,58 @@
     <Analyzer Include="E:\Unity\2022.3.4f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\BehaviorBricks\Actions\System\Navigation\MoveToPosition.cs" />
+    <Compile Include="Assets\BehaviorBricks\Samples\QuickStartGuide\Done\Resources\Spawner.cs" />
+    <Compile Include="Assets\BehaviorBricks\Actions\System\GameObject\ClosestGameObjectWithTag.cs" />
+    <Compile Include="Assets\BehaviorBricks\Actions\System\Vector3\GetRandomInArea.cs" />
+    <Compile Include="Assets\BehaviorBricks\Actions\System\Basic\SetFloat.cs" />
+    <Compile Include="Assets\BehaviorBricks\Actions\System\GameObject\SendMessage.cs" />
+    <Compile Include="Assets\BehaviorBricks\Conditions\System\Perception\IsTargetInSight.cs" />
+    <Compile Include="Assets\BehaviorBricks\Actions\System\Physics\SetVelocity.cs" />
     <Compile Include="Assets\Scripts\HitboxManager.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\BehaviorBricks\Conditions\System\Basic\CheckKey.cs" />
+    <Compile Include="Assets\BehaviorBricks\Samples\QuickStartGuide\Done\Resources\MassSpawner.cs" />
+    <Compile Include="Assets\BehaviorBricks\Actions\System\Physics\FromMouseToWorld.cs" />
+    <Compile Include="Assets\BehaviorBricks\Conditions\System\Basic\CheckBool.cs" />
+    <Compile Include="Assets\BehaviorBricks\Actions\System\Animation\PlayAnimation.cs" />
+    <Compile Include="Assets\BehaviorBricks\Actions\System\GameObject\FindGameObjectByName.cs" />
+    <Compile Include="Assets\BehaviorBricks\Actions\System\GameObject\FindGameObjectByTag.cs" />
+    <Compile Include="Assets\BehaviorBricks\BehaviorExecutor.cs" />
+    <Compile Include="Assets\BehaviorBricks\Actions\System\Navigation\MoveToRandomPosition.cs" />
     <Compile Include="Assets\Scripts\Actions.cs" />
+    <Compile Include="Assets\BehaviorBricks\Conditions\System\Basic\CheckButton.cs" />
+    <Compile Include="Assets\BehaviorBricks\Samples\ProgrammersQuickStartGuide\Done\DoneDayNightCycle.cs" />
     <Compile Include="Assets\Scripts\UIManager.cs" />
+    <Compile Include="Assets\BehaviorBricks\Actions\System\GameObject\SetActive.cs" />
+    <Compile Include="Assets\BehaviorBricks\Actions\System\Navigation\MoveToGameObject.cs" />
+    <Compile Include="Assets\BehaviorBricks\Conditions\System\Basic\CheckMouseButton.cs" />
+    <Compile Include="Assets\BehaviorBricks\Samples\ProgrammersQuickStartGuide\Done\DoneShoot.cs" />
+    <Compile Include="Assets\BehaviorBricks\Actions\System\Basic\WaitForSeconds.cs" />
+    <Compile Include="Assets\BehaviorBricks\Samples\ProgrammersQuickStartGuide\Done\DoneShootOnce.cs" />
     <Compile Include="Assets\Scripts\StateMachine.cs" />
+    <Compile Include="Assets\BehaviorBricks\Samples\ProgrammersQuickStartGuide\Done\DoneIsNight.cs" />
+    <Compile Include="Assets\BehaviorBricks\Actions\System\GameObject\GetComponent.cs" />
+    <Compile Include="Assets\BehaviorBricks\Conditions\System\Perception\IsTargetCloseAndInSight.cs" />
+    <Compile Include="Assets\BehaviorBricks\Actions\System\Audio\PlaySound.cs" />
+    <Compile Include="Assets\BehaviorBricks\Actions\System\Basic\toggleBool.cs" />
     <Compile Include="Assets\Scripts\LevelManager.cs" />
+    <Compile Include="Assets\BehaviorBricks\Actions\System\GameObject\Destroy.cs" />
+    <Compile Include="Assets\BehaviorBricks\Actions\System\GameObject\ClosestGameObjectFromList.cs" />
+    <Compile Include="Assets\BehaviorBricks\Actions\System\Basic\SetVector3.cs" />
     <Compile Include="Assets\Scripts\CombatBaseState.cs" />
+    <Compile Include="Assets\BehaviorBricks\Actions\System\Physics\ApplyForce.cs" />
+    <Compile Include="Assets\BehaviorBricks\Actions\System\Basic\SetInt.cs" />
+    <Compile Include="Assets\BehaviorBricks\Actions\System\GameObject\LookAt.cs" />
+    <Compile Include="Assets\BehaviorBricks\Actions\System\GameObject\Instantiate.cs" />
+    <Compile Include="Assets\BehaviorBricks\Samples\ProgrammersQuickStartGuide\Done\DoneSleepForever.cs" />
+    <Compile Include="Assets\BehaviorBricks\Conditions\System\Perception\IsTargetClose.cs" />
     <Compile Include="Assets\Scripts\Buttons.cs" />
     <Compile Include="Assets\Scripts\PlayerBehavior.cs" />
+    <Compile Include="Assets\BehaviorBricks\Actions\System\GameObject\AddComponent.cs" />
+    <Compile Include="Assets\BehaviorBricks\Samples\ProgrammersQuickStartGuide\Done\DoneBulletScript.cs" />
+    <Compile Include="Assets\BehaviorBricks\BrickAsset.cs" />
+    <Compile Include="Assets\BehaviorBricks\Actions\System\Basic\SetBool.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -85,9 +128,11 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\BehaviorBricks\Runtime\BehaviorBricks.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+    <None Include="Assets\BehaviorBricks\readme.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
   </ItemGroup>
@@ -343,6 +388,9 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.8.0\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="BehaviorBricks">
+      <HintPath>Assets\BehaviorBricks\Runtime\BehaviorBricks.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>E:\Unity\2022.3.4f1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>
