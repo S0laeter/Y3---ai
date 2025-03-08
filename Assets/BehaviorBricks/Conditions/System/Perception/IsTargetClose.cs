@@ -28,6 +28,6 @@ namespace BBUnity.Conditions
         public override bool Check()
 		{
             return (gameObject.transform.position - target.transform.position).sqrMagnitude < closeDistance * closeDistance;
-		}
+        }
     }
 }

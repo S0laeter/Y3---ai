@@ -15,10 +15,6 @@ namespace BBUnity.Conditions
     public class CheckPlayerStamina : GOCondition
     {
         // Define the input parameter
-        [InParam("thisPlayer")]
-        public PlayerBehavior thisPlayer;
-
-        // Define the input parameter
         [InParam("stamina")]
         public float stamina;
 
@@ -26,7 +22,7 @@ namespace BBUnity.Conditions
         /// Check the other player's combatIntention, if it's the same as input here, returns true
         public override bool Check()
         {
-            return thisPlayer.currentStamina >= stamina;
+            return gameObject.GetComponent<PlayerBehavior>().currentStamina >= stamina;
         }
     }
 }

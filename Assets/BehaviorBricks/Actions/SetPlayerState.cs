@@ -90,8 +90,6 @@ namespace BBCore.Actions
             elapsedTime += Time.deltaTime;
             if (elapsedTime >= duration)
             {
-                thisPlayer.stateMachine.SetNextStateToMain();
-
                 return TaskStatus.COMPLETED;
             }
                 
