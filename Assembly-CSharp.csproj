@@ -64,6 +64,7 @@
     <Compile Include="Assets\BehaviorBricks\Actions\System\Vector3\GetRandomInArea.cs" />
     <Compile Include="Assets\BehaviorBricks\Actions\System\Basic\SetFloat.cs" />
     <Compile Include="Assets\BehaviorBricks\Actions\System\GameObject\SendMessage.cs" />
+    <Compile Include="Assets\BehaviorBricks\Actions\SetPlayerState.cs" />
     <Compile Include="Assets\BehaviorBricks\Actions\CheckPlayerStamina.cs" />
     <Compile Include="Assets\BehaviorBricks\Conditions\System\Perception\IsTargetInSight.cs" />
     <Compile Include="Assets\BehaviorBricks\Actions\System\Physics\SetVelocity.cs" />
@@ -102,12 +103,12 @@
     <Compile Include="Assets\Scripts\CombatBaseState.cs" />
     <Compile Include="Assets\BehaviorBricks\Actions\System\Physics\ApplyForce.cs" />
     <Compile Include="Assets\BehaviorBricks\Actions\System\Basic\SetInt.cs" />
+    <Compile Include="Assets\BehaviorBricks\Actions\CheckOtherPlayerState.cs" />
     <Compile Include="Assets\BehaviorBricks\Actions\System\GameObject\LookAt.cs" />
     <Compile Include="Assets\BehaviorBricks\Actions\System\GameObject\Instantiate.cs" />
     <Compile Include="Assets\BehaviorBricks\Samples\ProgrammersQuickStartGuide\Done\DoneSleepForever.cs" />
     <Compile Include="Assets\BehaviorBricks\Conditions\System\Perception\IsTargetClose.cs" />
     <Compile Include="Assets\Scripts\Buttons.cs" />
-    <Compile Include="Assets\BehaviorBricks\Actions\CheckOtherPlayerIntention.cs" />
     <Compile Include="Assets\Scripts\PlayerBehavior.cs" />
     <Compile Include="Assets\BehaviorBricks\Actions\System\GameObject\AddComponent.cs" />
     <Compile Include="Assets\BehaviorBricks\Samples\ProgrammersQuickStartGuide\Done\DoneBulletScript.cs" />

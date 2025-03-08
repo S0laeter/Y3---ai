@@ -201,11 +201,6 @@ public class PlayerBehavior : MonoBehaviour
                 ConsumeStamina(hitDamage * 0.5f);
                 return;
             }
-            //if switching
-            else if (stateMachine.currentState.GetType() == typeof(SwitchState))
-            {
-                return;
-            }
             //if dodging
             else if (stateMachine.currentState.GetType() == typeof(DodgeState))
             {

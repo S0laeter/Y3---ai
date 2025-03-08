@@ -9,7 +9,7 @@ using UnityEngine.EventSystems;
 public class CombatBaseState : State
 {
     //duration doesnt need to be the same as animation length, make it slightly shorter to transition early to next attack
-    protected float stateDuration;
+    public float stateDuration;
 
     protected PlayerBehavior player;
     protected CharacterController controller;
@@ -56,7 +56,7 @@ public class CombatIdleState : CombatBaseState
         //stick to the centre line
         player.MoveToCentre();
 
-        //should try to dodge
+        /*//should try to dodge
         if (player.combatIntention == CombatIntention.Dodge)
         {
             stateMachine.SetNextState(new DodgeState());
@@ -111,7 +111,7 @@ public class CombatIdleState : CombatBaseState
         else if (player.combatIntention == CombatIntention.MoveForward)
         {
             stateMachine.SetNextState(new MoveForwardState());
-        }
+        }*/
 
     }
 
@@ -165,7 +165,7 @@ public class MoveForwardState : CombatBaseState
     {
         base.OnEnter(_stateMachine);
 
-        stateDuration = 5f;
+        stateDuration = 0.633f;
 
         //stick to the centre line
         player.MoveToCentre();
@@ -180,7 +180,7 @@ public class MoveForwardState : CombatBaseState
 
         controller.Move(player.transform.forward * 1.5f * Time.deltaTime);
 
-        //if no need to move anymore
+        /*//if no need to move anymore
         if (player.combatIntention != CombatIntention.MoveForward)
         {
             stateMachine.SetNextStateToMain();
@@ -189,7 +189,7 @@ public class MoveForwardState : CombatBaseState
         if (fixedTime >= stateDuration)
         {
             stateMachine.SetNextStateToMain();
-        }
+        }*/
 
     }
 
@@ -201,7 +201,7 @@ public class MoveBackwardState : CombatBaseState
     {
         base.OnEnter(_stateMachine);
 
-        stateDuration = 5f;
+        stateDuration = 0.443f;
 
         //stick to the centre line
         player.MoveToCentre();
@@ -216,7 +216,7 @@ public class MoveBackwardState : CombatBaseState
 
         controller.Move(-player.transform.forward * 1f * Time.deltaTime);
 
-        //if no need to move anymore
+        /*//if no need to move anymore
         if (player.combatIntention != CombatIntention.MoveBackward)
         {
             stateMachine.SetNextStateToMain();
@@ -225,7 +225,7 @@ public class MoveBackwardState : CombatBaseState
         if (fixedTime >= stateDuration)
         {
             stateMachine.SetNextStateToMain();
-        }
+        }*/
             
 
     }
@@ -248,7 +248,7 @@ public class BlockState : CombatBaseState
     {
         base.OnUpdate();
 
-        //if no need to block anymore
+        /*//if no need to block anymore
         if (player.combatIntention != CombatIntention.Block)
         {
             stateMachine.SetNextStateToMain();
@@ -258,7 +258,7 @@ public class BlockState : CombatBaseState
         if (fixedTime >= stateDuration)
         {
             stateMachine.SetNextStateToMain();
-        }
+        }*/
 
     }
 
@@ -282,33 +282,8 @@ public class DodgeState : CombatBaseState
     {
         base.OnUpdate();
 
-        if (fixedTime >= stateDuration)
-            stateMachine.SetNextStateToMain();
-
-    }
-
-}
-
-public class SwitchState : CombatBaseState
-{
-    public override void OnEnter(StateMachine _stateMachine)
-    {
-        base.OnEnter(_stateMachine);
-
-        stateDuration = 0.66f;
-
-        player.ConsumeStamina(15f);
-
-        anim.SetTrigger("switch");
-        Debug.Log(player.name + " switch");
-    }
-
-    public override void OnUpdate()
-    {
-        base.OnUpdate();
-
-        if (fixedTime >= stateDuration)
-            stateMachine.SetNextStateToMain();
+        /*if (fixedTime >= stateDuration)
+            stateMachine.SetNextStateToMain();*/
 
     }
 
@@ -378,8 +353,8 @@ public class LeftStraightState : CombatBaseState
     {
         base.OnUpdate();
 
-        if (fixedTime >= stateDuration)
-            stateMachine.SetNextStateToMain();
+        /*if (fixedTime >= stateDuration)
+            stateMachine.SetNextStateToMain();*/
 
     }
 
@@ -403,8 +378,8 @@ public class LeftHookState : CombatBaseState
     {
         base.OnUpdate();
 
-        if (fixedTime >= stateDuration)
-            stateMachine.SetNextStateToMain();
+        /*if (fixedTime >= stateDuration)
+            stateMachine.SetNextStateToMain();*/
 
     }
 
@@ -428,8 +403,8 @@ public class LeftBodyState : CombatBaseState
     {
         base.OnUpdate();
 
-        if (fixedTime >= stateDuration)
-            stateMachine.SetNextStateToMain();
+        /*if (fixedTime >= stateDuration)
+            stateMachine.SetNextStateToMain();*/
 
     }
 
@@ -453,8 +428,8 @@ public class RightStraightState : CombatBaseState
     {
         base.OnUpdate();
 
-        if (fixedTime >= stateDuration)
-            stateMachine.SetNextStateToMain();
+        /*if (fixedTime >= stateDuration)
+            stateMachine.SetNextStateToMain();*/
 
     }
 
@@ -478,8 +453,8 @@ public class RightHookState : CombatBaseState
     {
         base.OnUpdate();
 
-        if (fixedTime >= stateDuration)
-            stateMachine.SetNextStateToMain();
+        /*if (fixedTime >= stateDuration)
+            stateMachine.SetNextStateToMain();*/
 
     }
 
@@ -503,8 +478,8 @@ public class RightBodyState : CombatBaseState
     {
         base.OnUpdate();
 
-        if (fixedTime >= stateDuration)
-            stateMachine.SetNextStateToMain();
+        /*if (fixedTime >= stateDuration)
+            stateMachine.SetNextStateToMain();*/
 
     }
 
