@@ -1,0 +1,3 @@
+Packages\com.megumin.common\Runtime\Enableable.cs(177,34): warning CS0618: 'Enableable' is obsolete: 'use Enable instead'
+Packages\com.megumin.common\Runtime\Enableable.cs(178,34): warning CS0618: 'Enableable<>' is obsolete: 'use Enable<T> instead'
+Packages\com.megumin.common\Runtime\MonoScriptExtension.cs(172,17): warning CS4014: Because this call is not awaited, execution of the current method continues before the call is completed. Consider applying the 'await' operator to the result of the call.

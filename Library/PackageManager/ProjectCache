@@ -13,10 +13,66 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638667597083980382
-    m_Hash: 2757129724
+      ticks: 638771055650023979
+    m_Hash: 3482045543
 m_EmbeddedPackageManifests:
-  m_ManifestsStatus: {}
+  m_ManifestsStatus:
+    E:/Unity stuffs/Y3 - ai/Packages/com.megumin.perception/package.json:
+      m_FilePath: E:/Unity stuffs/Y3 - ai/Packages/com.megumin.perception/package.json
+      m_PathExists: 1
+      m_ContentTrackingEnabled: 1
+      m_ModificationDate:
+        serializedVersion: 2
+        ticks: 638686548220000000
+      m_Hash: 4177503342
+    E:/Unity stuffs/Y3 - ai/Packages/com.megumin.serialization/package.json:
+      m_FilePath: E:/Unity stuffs/Y3 - ai/Packages/com.megumin.serialization/package.json
+      m_PathExists: 1
+      m_ContentTrackingEnabled: 1
+      m_ModificationDate:
+        serializedVersion: 2
+        ticks: 638686545760000000
+      m_Hash: 645758387
+    E:/Unity stuffs/Y3 - ai/Packages/com.megumin.binding/package.json:
+      m_FilePath: E:/Unity stuffs/Y3 - ai/Packages/com.megumin.binding/package.json
+      m_PathExists: 1
+      m_ContentTrackingEnabled: 1
+      m_ModificationDate:
+        serializedVersion: 2
+        ticks: 638686549170000000
+      m_Hash: 1712741521
+    E:/Unity stuffs/Y3 - ai/Packages/com.megumin.reflection/package.json:
+      m_FilePath: E:/Unity stuffs/Y3 - ai/Packages/com.megumin.reflection/package.json
+      m_PathExists: 1
+      m_ContentTrackingEnabled: 1
+      m_ModificationDate:
+        serializedVersion: 2
+        ticks: 638686550400000000
+      m_Hash: 2672997849
+    E:/Unity stuffs/Y3 - ai/Packages/com.megumin.ai.behaviortree/package.json:
+      m_FilePath: E:/Unity stuffs/Y3 - ai/Packages/com.megumin.ai.behaviortree/package.json
+      m_PathExists: 1
+      m_ContentTrackingEnabled: 1
+      m_ModificationDate:
+        serializedVersion: 2
+        ticks: 638686544520000000
+      m_Hash: 818792698
+    E:/Unity stuffs/Y3 - ai/Packages/com.megumin.common/package.json:
+      m_FilePath: E:/Unity stuffs/Y3 - ai/Packages/com.megumin.common/package.json
+      m_PathExists: 1
+      m_ContentTrackingEnabled: 1
+      m_ModificationDate:
+        serializedVersion: 2
+        ticks: 638686546700000000
+      m_Hash: 812963932
+    E:/Unity stuffs/Y3 - ai/Packages/com.megumin.ai/package.json:
+      m_FilePath: E:/Unity stuffs/Y3 - ai/Packages/com.megumin.ai/package.json
+      m_PathExists: 1
+      m_ContentTrackingEnabled: 1
+      m_ModificationDate:
+        serializedVersion: 2
+        ticks: 638686547110000000
+      m_Hash: 1892789968
 m_LocalPackages:
   m_LocalFileStatus: []
 m_ProjectPath: E:/Unity stuffs/Y3 - ai/Packages
@@ -119,6 +175,8 @@ m_ResolvedPackages:
     - 2.4.4
     - 2.5.1
     - 2.5.2
+    - 2.6.0
+    - 2.7.1
     compatible:
     - 2.0.5
     - 2.0.7
@@ -132,6 +190,8 @@ m_ResolvedPackages:
     - 2.4.4
     - 2.5.1
     - 2.5.2
+    - 2.6.0
+    - 2.7.1
     recommended: 2.0.7
     deprecated: []
   dependencies: []
@@ -624,6 +684,9 @@ m_ResolvedPackages:
     - 1.11.0
     - 1.11.1
     - 1.11.2
+    - 1.12.0
+    - 1.13.0
+    - 1.13.1
     compatible:
     - 1.6.1
     - 1.6.3
@@ -638,6 +701,9 @@ m_ResolvedPackages:
     - 1.11.0
     - 1.11.1
     - 1.11.2
+    - 1.12.0
+    - 1.13.0
+    - 1.13.1
     recommended: 1.6.3
     deprecated: []
   dependencies:
@@ -894,6 +960,7 @@ m_ResolvedPackages:
     - 1.4.3
     - 1.4.4
     - 1.4.5
+    - 1.4.6
     - 2.0.1-exp.1
     - 2.0.1-exp.2
     - 2.0.1-pre.12
@@ -915,6 +982,7 @@ m_ResolvedPackages:
     - 1.4.3
     - 1.4.4
     - 1.4.5
+    - 1.4.6
     - 2.0.1-exp.1
     - 2.0.1-exp.2
     - 2.0.1-pre.12
@@ -1096,6 +1164,8 @@ m_ResolvedPackages:
     - 3.2.0-pre.8
     - 3.2.0-pre.9
     - 3.2.0-pre.10
+    - 3.2.0-pre.11
+    - 3.2.0-pre.12
     - 4.0.0-pre.1
     - 4.0.0-pre.2
     compatible:
@@ -1113,6 +1183,8 @@ m_ResolvedPackages:
     - 3.2.0-pre.8
     - 3.2.0-pre.9
     - 3.2.0-pre.10
+    - 3.2.0-pre.11
+    - 3.2.0-pre.12
     - 4.0.0-pre.1
     - 4.0.0-pre.2
     recommended: 3.0.9
@@ -1258,6 +1330,7 @@ m_ResolvedPackages:
     - 1.7.4
     - 1.7.5
     - 1.7.6
+    - 1.7.7
     - 1.8.0
     - 1.8.1
     - 1.8.2
@@ -1266,10 +1339,12 @@ m_ResolvedPackages:
     - 1.8.5
     - 1.8.6
     - 1.8.7
+    - 1.8.8
     compatible:
     - 1.7.4
     - 1.7.5
     - 1.7.6
+    - 1.7.7
     - 1.8.0
     - 1.8.1
     - 1.8.2
@@ -1278,7 +1353,8 @@ m_ResolvedPackages:
     - 1.8.5
     - 1.8.6
     - 1.8.7
-    recommended: 1.7.6
+    - 1.8.8
+    recommended: 1.7.7
     deprecated: []
   dependencies:
   - name: com.unity.modules.audio
@@ -1455,6 +1531,7 @@ m_ResolvedPackages:
     - 1.9.2
     - 1.9.4
     - 1.9.5
+    - 1.9.6
     compatible:
     - 1.8.0
     - 1.9.0
@@ -1462,6 +1539,7 @@ m_ResolvedPackages:
     - 1.9.2
     - 1.9.4
     - 1.9.5
+    - 1.9.6
     recommended: 1.8.0
     deprecated:
     - 1.8.0-pre.1
@@ -3348,6 +3426,510 @@ m_ResolvedPackages:
     deprecationMessage: 
   isDeprecated: 0
   deprecationMessage: 
+- packageId: com.megumin.ai@file:E:\Unity stuffs\Y3 - ai\Packages\com.megumin.ai
+  testable: 1
+  isDirectDependency: 1
+  version: 1.3.0
+  source: 3
+  resolvedPath: E:\Unity stuffs\Y3 - ai\Packages\com.megumin.ai
+  assetPath: Packages/com.megumin.ai
+  name: com.megumin.ai
+  displayName: Megumin AI
+  author:
+    name: KumoKyaku
+    email: 479813005@qq.com
+    url: https://github.com/KumoKyaku
+  category: Megumin
+  type: 
+  description: AI module basic code, standard interface definition.
+  status: 0
+  errors: []
+  versions:
+    all: []
+    compatible: []
+    recommended: 
+    deprecated: []
+  dependencies:
+  - name: com.megumin.common
+    version: 1.0.9
+  - name: com.megumin.binding
+    version: 1.1.1
+  - name: com.megumin.serialization
+    version: 1.1.1
+  - name: com.unity.settings-manager
+    version: 1.0.3
+  resolvedDependencies:
+  - name: com.megumin.common
+    version: 1.0.9
+  - name: com.megumin.binding
+    version: 1.1.1
+  - name: com.megumin.serialization
+    version: 1.1.1
+  - name: com.unity.settings-manager
+    version: 2.0.1
+  keywords:
+  - PackageWizard
+  - Megumin
+  - AI
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+  hideInEditor: 0
+  isAssetStorePackage: 0
+  datePublishedTicks: 0
+  documentationUrl: https://github.com/KumoKyaku/Megumin.GameFramework.AI.Samples/wiki
+  hasRepository: 0
+  repository:
+    type: 
+    url: 
+    revision: 
+    path: 
+  unityLifecycle:
+    version: 
+    nextVersion: 
+    recommendedVersion: 
+    isDeprecated: 0
+    deprecationMessage: 
+  isDeprecated: 0
+  deprecationMessage: 
+- packageId: com.megumin.ai.behaviortree@file:E:\Unity stuffs\Y3 - ai\Packages\com.megumin.ai.behaviortree
+  testable: 1
+  isDirectDependency: 1
+  version: 1.3.1
+  source: 3
+  resolvedPath: E:\Unity stuffs\Y3 - ai\Packages\com.megumin.ai.behaviortree
+  assetPath: Packages/com.megumin.ai.behaviortree
+  name: com.megumin.ai.behaviortree
+  displayName: Megumin AI BehaviorTree
+  author:
+    name: KumoKyaku
+    email: 479813005@qq.com
+    url: https://github.com/KumoKyaku
+  category: Megumin
+  type: 
+  description: "Megumin AI BehaviorTree is a behavior tree editor plugin designed
+    for AAA and indie games.  \r\nProvides a visual editor to create behavior trees
+    without writing code. Allows designers to quickly create complex AI.  \r\nIt
+    solves many pain points in the use of traditional behavior trees editor, and
+    it is worth trying for users who are not satisfied with traditional behavior
+    trees editor."
+  status: 0
+  errors: []
+  versions:
+    all: []
+    compatible: []
+    recommended: 
+    deprecated: []
+  dependencies:
+  - name: com.megumin.common
+    version: 1.0.9
+  - name: com.megumin.binding
+    version: 1.1.1
+  - name: com.megumin.serialization
+    version: 1.1.1
+  - name: com.unity.settings-manager
+    version: 1.0.3
+  - name: com.megumin.ai
+    version: 1.3.0
+  resolvedDependencies:
+  - name: com.megumin.common
+    version: 1.0.9
+  - name: com.megumin.binding
+    version: 1.1.1
+  - name: com.megumin.serialization
+    version: 1.1.1
+  - name: com.unity.settings-manager
+    version: 2.0.1
+  - name: com.megumin.ai
+    version: 1.3.0
+  keywords:
+  - PackageWizard
+  - Megumin
+  - AI.BehaviorTree
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+  hideInEditor: 0
+  isAssetStorePackage: 0
+  datePublishedTicks: 0
+  documentationUrl: https://github.com/KumoKyaku/Megumin.AI.Samples/wiki/BehaviorTree_Document
+  hasRepository: 0
+  repository:
+    type: 
+    url: 
+    revision: 
+    path: 
+  unityLifecycle:
+    version: 
+    nextVersion: 
+    recommendedVersion: 
+    isDeprecated: 0
+    deprecationMessage: 
+  isDeprecated: 0
+  deprecationMessage: 
+- packageId: com.megumin.binding@file:E:\Unity stuffs\Y3 - ai\Packages\com.megumin.binding
+  testable: 1
+  isDirectDependency: 1
+  version: 1.1.1
+  source: 3
+  resolvedPath: E:\Unity stuffs\Y3 - ai\Packages\com.megumin.binding
+  assetPath: Packages/com.megumin.binding
+  name: com.megumin.binding
+  displayName: Megumin Binding
+  author:
+    name: KumoKyaku
+    email: 479813005@qq.com
+    url: https://github.com/KumoKyaku
+  category: Megumin
+  type: 
+  description: The parameter binding module code of the Megumin-Plugins.
+  status: 0
+  errors: []
+  versions:
+    all: []
+    compatible: []
+    recommended: 
+    deprecated: []
+  dependencies:
+  - name: com.megumin.common
+    version: 1.0.9
+  - name: com.megumin.serialization
+    version: 1.1.1
+  resolvedDependencies:
+  - name: com.megumin.common
+    version: 1.0.9
+  - name: com.megumin.serialization
+    version: 1.1.1
+  keywords:
+  - PackageWizard
+  - Megumin
+  - Binding
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+  hideInEditor: 0
+  isAssetStorePackage: 0
+  datePublishedTicks: 0
+  documentationUrl: 
+  hasRepository: 0
+  repository:
+    type: 
+    url: 
+    revision: 
+    path: 
+  unityLifecycle:
+    version: 
+    nextVersion: 
+    recommendedVersion: 
+    isDeprecated: 0
+    deprecationMessage: 
+  isDeprecated: 0
+  deprecationMessage: 
+- packageId: com.megumin.common@file:E:\Unity stuffs\Y3 - ai\Packages\com.megumin.common
+  testable: 1
+  isDirectDependency: 1
+  version: 1.0.9
+  source: 3
+  resolvedPath: E:\Unity stuffs\Y3 - ai\Packages\com.megumin.common
+  assetPath: Packages/com.megumin.common
+  name: com.megumin.common
+  displayName: Megumin Common
+  author:
+    name: KumoKyaku
+    email: 479813005@qq.com
+    url: https://github.com/KumoKyaku
+  category: Megumin
+  type: 
+  description: The common module code of the Megumin-Plugins.
+  status: 0
+  errors: []
+  versions:
+    all: []
+    compatible: []
+    recommended: 
+    deprecated: []
+  dependencies: []
+  resolvedDependencies: []
+  keywords:
+  - PackageWizard
+  - Megumin
+  - Common
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+  hideInEditor: 0
+  isAssetStorePackage: 0
+  datePublishedTicks: 0
+  documentationUrl: https://github.com/0x3f3f3f3f/Megumin.Common
+  hasRepository: 0
+  repository:
+    type: 
+    url: 
+    revision: 
+    path: 
+  unityLifecycle:
+    version: 
+    nextVersion: 
+    recommendedVersion: 
+    isDeprecated: 0
+    deprecationMessage: 
+  isDeprecated: 0
+  deprecationMessage: 
+- packageId: com.megumin.perception@file:E:\Unity stuffs\Y3 - ai\Packages\com.megumin.perception
+  testable: 1
+  isDirectDependency: 1
+  version: 1.1.3
+  source: 3
+  resolvedPath: E:\Unity stuffs\Y3 - ai\Packages\com.megumin.perception
+  assetPath: Packages/com.megumin.perception
+  name: com.megumin.perception
+  displayName: Megumin Perception
+  author:
+    name: KumoKyaku
+    email: 479813005@qq.com
+    url: https://github.com/KumoKyaku
+  category: Megumin
+  type: 
+  description: AI perception module code.
+  status: 0
+  errors: []
+  versions:
+    all: []
+    compatible: []
+    recommended: 
+    deprecated: []
+  dependencies:
+  - name: com.megumin.common
+    version: 1.0.9
+  resolvedDependencies:
+  - name: com.megumin.common
+    version: 1.0.9
+  keywords:
+  - PackageWizard
+  - Megumin
+  - Perception
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+  hideInEditor: 0
+  isAssetStorePackage: 0
+  datePublishedTicks: 0
+  documentationUrl: https://github.com/0x3f3f3f3f/Megumin.Perception
+  hasRepository: 0
+  repository:
+    type: 
+    url: 
+    revision: 
+    path: 
+  unityLifecycle:
+    version: 
+    nextVersion: 
+    recommendedVersion: 
+    isDeprecated: 0
+    deprecationMessage: 
+  isDeprecated: 0
+  deprecationMessage: 
+- packageId: com.megumin.reflection@file:E:\Unity stuffs\Y3 - ai\Packages\com.megumin.reflection
+  testable: 1
+  isDirectDependency: 1
+  version: 1.1.1
+  source: 3
+  resolvedPath: E:\Unity stuffs\Y3 - ai\Packages\com.megumin.reflection
+  assetPath: Packages/com.megumin.reflection
+  name: com.megumin.reflection
+  displayName: Megumin Reflection
+  author:
+    name: KumoKyaku
+    email: 479813005@qq.com
+    url: https://github.com/KumoKyaku
+  category: Megumin
+  type: 
+  description: The reflection module code of the Megumin-Plugins.
+  status: 0
+  errors: []
+  versions:
+    all: []
+    compatible: []
+    recommended: 
+    deprecated: []
+  dependencies: []
+  resolvedDependencies: []
+  keywords:
+  - PackageWizard
+  - Megumin
+  - Reflection
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+  hideInEditor: 0
+  isAssetStorePackage: 0
+  datePublishedTicks: 0
+  documentationUrl: 
+  hasRepository: 0
+  repository:
+    type: 
+    url: 
+    revision: 
+    path: 
+  unityLifecycle:
+    version: 
+    nextVersion: 
+    recommendedVersion: 
+    isDeprecated: 0
+    deprecationMessage: 
+  isDeprecated: 0
+  deprecationMessage: 
+- packageId: com.megumin.serialization@file:E:\Unity stuffs\Y3 - ai\Packages\com.megumin.serialization
+  testable: 1
+  isDirectDependency: 1
+  version: 1.1.1
+  source: 3
+  resolvedPath: E:\Unity stuffs\Y3 - ai\Packages\com.megumin.serialization
+  assetPath: Packages/com.megumin.serialization
+  name: com.megumin.serialization
+  displayName: Megumin Serialization
+  author:
+    name: KumoKyaku
+    email: 479813005@qq.com
+    url: https://github.com/KumoKyaku
+  category: Megumin
+  type: 
+  description: The reflection module code of the Megumin-Plugins.
+  status: 0
+  errors: []
+  versions:
+    all: []
+    compatible: []
+    recommended: 
+    deprecated: []
+  dependencies:
+  - name: com.megumin.common
+    version: 1.0.9
+  resolvedDependencies:
+  - name: com.megumin.common
+    version: 1.0.9
+  keywords:
+  - PackageWizard
+  - Megumin
+  - Serialization
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+  hideInEditor: 0
+  isAssetStorePackage: 0
+  datePublishedTicks: 0
+  documentationUrl: 
+  hasRepository: 0
+  repository:
+    type: 
+    url: 
+    revision: 
+    path: 
+  unityLifecycle:
+    version: 
+    nextVersion: 
+    recommendedVersion: 
+    isDeprecated: 0
+    deprecationMessage: 
+  isDeprecated: 0
+  deprecationMessage: 
+- packageId: com.unity.settings-manager@2.0.1
+  testable: 0
+  isDirectDependency: 0
+  version: 2.0.1
+  source: 1
+  resolvedPath: E:\Unity stuffs\Y3 - ai\Library\PackageCache\com.unity.settings-manager@2.0.1
+  assetPath: Packages/com.unity.settings-manager
+  name: com.unity.settings-manager
+  displayName: Settings Manager
+  author:
+    name: 
+    email: 
+    url: 
+  category: 
+  type: asset
+  description: A framework for making any serializable field a setting, complete
+    with a pre-built settings interface.
+  status: 0
+  errors: []
+  versions:
+    all:
+    - 0.1.0-preview.4
+    - 0.1.0-preview.8
+    - 1.0.0
+    - 1.0.1
+    - 1.0.2
+    - 1.0.3
+    - 2.0.0
+    - 2.0.1
+    compatible:
+    - 2.0.1
+    recommended: 2.0.1
+    deprecated: []
+  dependencies: []
+  resolvedDependencies: []
+  keywords: []
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+  hideInEditor: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 637744099390000000
+  documentationUrl: 
+  hasRepository: 1
+  repository:
+    type: git
+    url: https://github.com/Unity-Technologies/com.unity.settings-manager.git
+    revision: 9b7c12d04ef880168151c127fd6b37b5931197dc
+    path: 
+  unityLifecycle:
+    version: 2.0.1
+    nextVersion: 
+    recommendedVersion: 
+    isDeprecated: 0
+    deprecationMessage: 
+  isDeprecated: 0
+  deprecationMessage: 
 - packageId: com.unity.modules.subsystems@1.0.0
   testable: 0
   isDirectDependency: 0
@@ -3708,6 +4290,7 @@ m_ResolvedPackages:
     - 1.8.16
     - 1.8.17
     - 1.8.18
+    - 1.8.19
     compatible:
     - 1.8.7
     - 1.8.8
@@ -3721,7 +4304,8 @@ m_ResolvedPackages:
     - 1.8.16
     - 1.8.17
     - 1.8.18
-    recommended: 1.8.18
+    - 1.8.19
+    recommended: 1.8.19
     deprecated: []
   dependencies:
   - name: com.unity.mathematics
@@ -4304,6 +4888,7 @@ m_ResolvedPackages:
     - 3.1.0
     - 3.1.1
     - 3.1.2
+    - 3.1.3
     compatible:
     - 2.9.5
     - 2.9.7
@@ -4322,6 +4907,7 @@ m_ResolvedPackages:
     - 3.1.0
     - 3.1.1
     - 3.1.2
+    - 3.1.3
     recommended: 2.9.7
     deprecated: []
   dependencies:
@@ -4439,6 +5025,8 @@ m_ResolvedPackages:
     - 5.1.0-pre.1
     - 5.1.0
     - 5.1.1
+    - 5.1.2
+    - 5.1.3
     compatible:
     - 4.2.1
     - 5.0.0-pre.1
@@ -4446,6 +5034,8 @@ m_ResolvedPackages:
     - 5.1.0-pre.1
     - 5.1.0
     - 5.1.1
+    - 5.1.2
+    - 5.1.3
     recommended: 4.2.1
     deprecated: []
   dependencies:
@@ -4535,9 +5125,11 @@ m_ResolvedPackages:
     - 4.7.0-preview
     - 4.9.1
     - 4.9.2
+    - 4.9.3
     compatible:
     - 4.9.2
-    recommended: 4.9.2
+    - 4.9.3
+    recommended: 4.9.3
     deprecated: []
   dependencies: []
   resolvedDependencies: []
