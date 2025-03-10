@@ -24,6 +24,8 @@ public class CombatBaseState : State
         controller = player.controller;
         anim = player.anim;
 
+        //stick to the centre line
+        player.MoveToCentre();
     }
 
     public override void OnUpdate()
@@ -52,9 +54,6 @@ public class IdleState : CombatBaseState
     public override void OnUpdate()
     {
         base.OnUpdate();
-
-        //stick to the centre line
-        player.MoveToCentre();
 
         /*//should try to dodge
         if (player.combatIntention == CombatIntention.Dodge)
@@ -167,9 +166,6 @@ public class MoveForwardState : CombatBaseState
 
         stateDuration = 0.633f;
 
-        //stick to the centre line
-        player.MoveToCentre();
-
         anim.SetTrigger("move forward");
         Debug.Log(player.name + " moving forward");
     }
@@ -202,9 +198,6 @@ public class MoveBackwardState : CombatBaseState
         base.OnEnter(_stateMachine);
 
         stateDuration = 0.443f;
-
-        //stick to the centre line
-        player.MoveToCentre();
 
         anim.SetTrigger("move backward");
         Debug.Log(player.name + " moving backward");

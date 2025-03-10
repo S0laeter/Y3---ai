@@ -1,4 +1,4 @@
-/*using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using Megumin.AI;
@@ -8,20 +8,16 @@ using UnityEngine;
 
 public sealed class CheckPlayerDistance : ConditionDecorator
 {
-    public RefVar_GameObject otherPlayer;
-
     protected override bool OnCheckCondition(object options = null)
     {
-        float distanceToOtherPlayer = Vector3.Distance(otherPlayer.Value.transform.position, GameObject.transform.position);
-
-        if (distanceToOtherPlayer <= 1f)
+        if (GameObject.GetComponent<PlayerBehavior>().distanceToOtherPlayer <= 1f)
             return true;
 
         return false;
     }
-}*/
+}
 
-using System;
+/*using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using Megumin.AI;
@@ -39,10 +35,10 @@ public sealed class CheckPlayerDistance : BTActionNode
         float distanceToOtherPlayer = Vector3.Distance(otherPlayer.Value.transform.position, GameObject.transform.position);
         Debug.Log(distanceToOtherPlayer);
 
-        if (distanceToOtherPlayer <= 1f)
+        if (GameObject.GetComponent<PlayerBehavior>().distanceToOtherPlayer <= 1f)
             return Status.Succeeded;
         else
             return Status.Failed;
 
     }
-}
+}*/

@@ -20,7 +20,7 @@ public class PlayerBehavior : MonoBehaviour
     public int playerID;
 
     public PlayerBehavior otherPlayer;
-    private float distanceToOtherPlayer;
+    public float distanceToOtherPlayer;
 
     public StateMachine stateMachine;
     public CharacterController controller;
@@ -68,8 +68,8 @@ public class PlayerBehavior : MonoBehaviour
         if (isEndgame)
             return;
 
-        /*//calculate distance
-        distanceToOtherPlayer = Vector3.Distance(otherPlayer.transform.position, transform.position);*/
+        //calculate distance
+        distanceToOtherPlayer = Vector3.Distance(otherPlayer.transform.position, transform.position);
 
         //if die
         if (currentHp <= 0 && combatIntention != CombatIntention.Lost)
