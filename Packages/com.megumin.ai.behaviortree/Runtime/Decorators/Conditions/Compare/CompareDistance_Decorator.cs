@@ -22,7 +22,7 @@ namespace Megumin.AI.BehaviorTree
         //这里不要增加SaveTo，因为只在比较时才计算一次，不是实时的。
 
         [Space]
-        public RefVar_Float CompareTo = new RefVar_Float() { value = 0.2f };
+        public RefVar_Float CompareTo = new RefVar_Float() { value = 2f };
 
         private float distance;
 
@@ -76,7 +76,7 @@ namespace Megumin.AI.BehaviorTree
         public RefVar_Transform To;
 
         [Space]
-        public RefVar_Float CompareTo = new RefVar_Float() { value = 0.2f };
+        public RefVar_Float CompareTo = new RefVar_Float() { value = 2f };
 
         private float distance;
 

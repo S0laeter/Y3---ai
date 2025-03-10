@@ -42,6 +42,18 @@ public sealed class SetNextState : BTActionNode
             case "right body":
                 player.stateMachine.SetNextState(new RightBodyState());
                 break;
+            case "dodge":
+                player.stateMachine.SetNextState(new DodgeState());
+                break;
+            case "block":
+                player.stateMachine.SetNextState(new BlockState());
+                break;
+            case "move forward":
+                player.stateMachine.SetNextState(new MoveForwardState());
+                break;
+            case "move back":
+                player.stateMachine.SetNextState(new MoveBackwardState());
+                break;
             default:
                 player.stateMachine.SetNextState(new IdleState());
                 break;
