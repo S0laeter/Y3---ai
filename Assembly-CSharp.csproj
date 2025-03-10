@@ -58,8 +58,10 @@
     <Analyzer Include="E:\Unity\2022.3.4f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Behavior Tree\CheckPlayerDistance.cs" />
     <Compile Include="Assets\Scripts\HitboxManager.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\Behavior Tree\SetNextState.cs" />
     <Compile Include="Assets\Scripts\Actions.cs" />
     <Compile Include="Assets\Scripts\UIManager.cs" />
     <Compile Include="Assets\Scripts\StateMachine.cs" />
@@ -788,11 +790,11 @@
     <Reference Include="Unity.VisualScripting.Core">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.Core.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Core.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Flow.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
@@ -827,11 +829,11 @@
     <Reference Include="Unity.RenderPipelines.Universal.Shaders">
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Searcher.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Searcher.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.State">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
@@ -849,13 +851,13 @@
       <Project>{CA086C60-21E9-B36E-9BBA-755FF9DADF42}</Project>
       <Name>Megumin.AI</Name>
     </ProjectReference>
-    <ProjectReference Include="Megumin.Serialization.Editor.csproj">
-      <Project>{BF43C17F-5901-10BE-6DDD-F63356A7938C}</Project>
-      <Name>Megumin.Serialization.Editor</Name>
-    </ProjectReference>
     <ProjectReference Include="Megumin.Binding.Editor.csproj">
       <Project>{1B3F331B-946C-15E9-77DE-805CA7B0E1B1}</Project>
       <Name>Megumin.Binding.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Megumin.Serialization.Editor.csproj">
+      <Project>{BF43C17F-5901-10BE-6DDD-F63356A7938C}</Project>
+      <Name>Megumin.Serialization.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Megumin.Reflection.csproj">
       <Project>{1475C916-8C3B-6694-3AEE-0FF7B708B88D}</Project>

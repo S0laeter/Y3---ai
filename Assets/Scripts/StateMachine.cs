@@ -106,7 +106,7 @@ public class StateMachine : MonoBehaviour
     {
         if (mainStateType == null)
         {
-            mainStateType = new CombatIdleState();
+            mainStateType = new IdleState();
         }
     }
 

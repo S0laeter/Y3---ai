@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "E:\\Unity stuffs\\Y3 - ai\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{351F5504-21CB-DF90-5BD6-3680667CAFB9}|Assembly-CSharp.csproj|e:\\unity stuffs\\y3 - ai\\assets\\behaviorbricks\\actions\\setplayerstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{351F5504-21CB-DF90-5BD6-3680667CAFB9}|Assembly-CSharp.csproj|solutionrelative:assets\\behaviorbricks\\actions\\setplayerstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{351F5504-21CB-DF90-5BD6-3680667CAFB9}|Assembly-CSharp.csproj|E:\\Unity stuffs\\Y3 - ai\\assets\\behavior tree\\setnextstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{351F5504-21CB-DF90-5BD6-3680667CAFB9}|Assembly-CSharp.csproj|solutionrelative:assets\\behavior tree\\setnextstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{351F5504-21CB-DF90-5BD6-3680667CAFB9}|Assembly-CSharp.csproj|E:\\Unity stuffs\\Y3 - ai\\assets\\scripts\\combatbasestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -27,14 +27,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "SetPlayerState.cs",
-              "DocumentMoniker": "E:\\Unity stuffs\\Y3 - ai\\Assets\\BehaviorBricks\\Actions\\SetPlayerState.cs",
-              "RelativeDocumentMoniker": "Assets\\BehaviorBricks\\Actions\\SetPlayerState.cs",
-              "ToolTip": "E:\\Unity stuffs\\Y3 - ai\\Assets\\BehaviorBricks\\Actions\\SetPlayerState.cs",
-              "RelativeToolTip": "Assets\\BehaviorBricks\\Actions\\SetPlayerState.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAAAAwAAAAAAdAAAA",
+              "Title": "SetNextState.cs",
+              "DocumentMoniker": "E:\\Unity stuffs\\Y3 - ai\\Assets\\Behavior Tree\\SetNextState.cs",
+              "RelativeDocumentMoniker": "Assets\\Behavior Tree\\SetNextState.cs",
+              "ToolTip": "E:\\Unity stuffs\\Y3 - ai\\Assets\\Behavior Tree\\SetNextState.cs",
+              "RelativeToolTip": "Assets\\Behavior Tree\\SetNextState.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAAwCsAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-08T06:03:10.152Z",
+              "WhenOpened": "2025-03-10T02:56:45.765Z",
               "EditorCaption": ""
             },
             {
@@ -45,7 +45,7 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\CombatBaseState.cs",
               "ToolTip": "E:\\Unity stuffs\\Y3 - ai\\Assets\\Scripts\\CombatBaseState.cs",
               "RelativeToolTip": "Assets\\Scripts\\CombatBaseState.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAOkAAAAAAAAA",
+              "ViewState": "AQIAACEAAAAAAAAAAAAiwCoAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-09T14:49:28.282Z",
               "EditorCaption": ""
@@ -58,7 +58,7 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerBehavior.cs",
               "ToolTip": "E:\\Unity stuffs\\Y3 - ai\\Assets\\Scripts\\PlayerBehavior.cs",
               "RelativeToolTip": "Assets\\Scripts\\PlayerBehavior.cs",
-              "ViewState": "AQIAAC8AAAAAAAAAAAAqwEUAAAAAAAAA",
+              "ViewState": "AQIAADcAAAAAAAAAAAAuwEgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-09T14:12:06.434Z",
               "EditorCaption": ""

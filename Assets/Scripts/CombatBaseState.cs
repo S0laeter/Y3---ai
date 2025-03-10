@@ -40,7 +40,7 @@ public class CombatBaseState : State
 
 }
 
-public class CombatIdleState : CombatBaseState
+public class IdleState : CombatBaseState
 {
     public override void OnEnter(StateMachine _stateMachine)
     {
