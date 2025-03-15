@@ -32,6 +32,12 @@ public sealed class CheckOtherPlayerState : ConditionDecorator
                     return true;
                 break;
 
+            case "moving":
+                if (otherPlayer.stateMachine.currentState.GetType() == typeof(MoveForwardState)
+                || otherPlayer.stateMachine.currentState.GetType() == typeof(MoveBackwardState))
+                    return true;
+                break;
+
             default:
                 break;
         }

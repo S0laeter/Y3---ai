@@ -48,7 +48,7 @@ public class IdleState : CombatBaseState
     {
         base.OnEnter(_stateMachine);
 
-        //anim.SetTrigger("idle");
+        anim.SetTrigger("idle");
         Debug.Log(player.name + " idle");
     }
 
