@@ -67,7 +67,9 @@
     <Compile Include="Assets\Scripts\UIManager.cs" />
     <Compile Include="Assets\Scripts\StateMachine.cs" />
     <Compile Include="Assets\Scripts\LevelManager.cs" />
+    <Compile Include="Assets\Behavior Tree\SetMovement.cs" />
     <Compile Include="Assets\Scripts\CombatBaseState.cs" />
+    <Compile Include="Assets\Behavior Tree\SetReaction.cs" />
     <Compile Include="Assets\Scripts\Buttons.cs" />
     <Compile Include="Assets\Scripts\PlayerBehavior.cs" />
   </ItemGroup>

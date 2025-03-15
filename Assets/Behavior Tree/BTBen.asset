@@ -52,6 +52,42 @@ MonoBehaviour:
     - Name: GUID
       Type: System.String
       Value: 0381c3c1-34ed-499b-a177-362dc75c731c
+  - Name: 1ea02464-8ebe-4089-a16d-236ab2024823
+    Type: SetMovement
+    Member:
+    - Name: direction
+      Type: System.String
+      Value: forward
+    - Name: duration
+      Type: System.Single
+      Value: 0.633
+    - Name: Meta
+      Type: $ref
+      Value: 1ea02464-8ebe-4089-a16d-236ab2024823.Meta
+    - Name: Decorators
+      Type: $ref
+      Value: 1ea02464-8ebe-4089-a16d-236ab2024823.Decorators
+    - Name: GUID
+      Type: System.String
+      Value: 1ea02464-8ebe-4089-a16d-236ab2024823
+  - Name: 1ffec2d8-2536-434a-a3cd-d0ba3135cb32
+    Type: SetMovement
+    Member:
+    - Name: direction
+      Type: System.String
+      Value: backward
+    - Name: duration
+      Type: System.Single
+      Value: 1.5
+    - Name: Meta
+      Type: $ref
+      Value: 1ffec2d8-2536-434a-a3cd-d0ba3135cb32.Meta
+    - Name: Decorators
+      Type: $ref
+      Value: 1ffec2d8-2536-434a-a3cd-d0ba3135cb32.Decorators
+    - Name: GUID
+      Type: System.String
+      Value: 1ffec2d8-2536-434a-a3cd-d0ba3135cb32
   - Name: 3d9286f2-ddab-4445-bc6d-4248e73b9f48
     Type: SetNextState
     Member:
@@ -136,24 +172,6 @@ MonoBehaviour:
     - Name: GUID
       Type: System.String
       Value: 47bc5e9a-84df-4bcc-b7a2-8ddc51e5326b
-  - Name: 540fd0a6-85c9-4519-a021-b868e37c7bdf
-    Type: SetNextState
-    Member:
-    - Name: stateName
-      Type: System.String
-      Value: move forward
-    - Name: duration
-      Type: System.Single
-      Value: 0.633
-    - Name: Meta
-      Type: $ref
-      Value: 540fd0a6-85c9-4519-a021-b868e37c7bdf.Meta
-    - Name: Decorators
-      Type: $ref
-      Value: 540fd0a6-85c9-4519-a021-b868e37c7bdf.Decorators
-    - Name: GUID
-      Type: System.String
-      Value: 540fd0a6-85c9-4519-a021-b868e37c7bdf
   - Name: 767867f6-1540-4cb4-9827-9a9c290041d3
     Type: SetNextState
     Member:
@@ -289,24 +307,6 @@ MonoBehaviour:
     - Name: GUID
       Type: System.String
       Value: e101477f-d5f2-442f-a816-73dbb85c6cc4
-  - Name: e28e2c2f-1371-43d9-8d3d-f60c8729dba7
-    Type: SetNextState
-    Member:
-    - Name: stateName
-      Type: System.String
-      Value: move back
-    - Name: duration
-      Type: System.Single
-      Value: 2
-    - Name: Meta
-      Type: $ref
-      Value: e28e2c2f-1371-43d9-8d3d-f60c8729dba7.Meta
-    - Name: Decorators
-      Type: $ref
-      Value: e28e2c2f-1371-43d9-8d3d-f60c8729dba7.Decorators
-    - Name: GUID
-      Type: System.String
-      Value: e28e2c2f-1371-43d9-8d3d-f60c8729dba7
   - Name: fbcf90d8-b63e-4995-8313-300c834c898f
     Type: SetNextState
     Member:
@@ -326,6 +326,18 @@ MonoBehaviour:
       Type: System.String
       Value: fbcf90d8-b63e-4995-8313-300c834c898f
   decorators:
+  - Name: becf49ac-f5b3-4ad2-bd08-ca7569a8bdb1
+    Type: CheckPlayerDistance
+    Member:
+    - Name: Invert
+      Type: System.Boolean
+      Value: True
+    - Name: GUID
+      Type: System.String
+      Value: becf49ac-f5b3-4ad2-bd08-ca7569a8bdb1
+    - Name: AbortType
+      Type: Megumin.AI.BehaviorTree.AbortType
+      Value: Megumin.AI.BehaviorTree.AbortType:Self
   - Name: d986830f-134c-47d1-9714-3b941422fda3
     Type: CheckPlayerDistance
     Member:
@@ -408,6 +420,63 @@ MonoBehaviour:
     - Name: Comment
       Type: System.String
       Value: 
+  - Name: 1ea02464-8ebe-4089-a16d-236ab2024823.Decorators
+    Type: System.Collections.Generic.List`1[[Megumin.AI.BehaviorTree.IDecorator]]
+    Member:
+    - Name: 0
+      Type: $ref
+      Value: becf49ac-f5b3-4ad2-bd08-ca7569a8bdb1
+  - Name: 1ea02464-8ebe-4089-a16d-236ab2024823.Meta
+    Type: Megumin.AI.BehaviorTree.NodeMeta
+    Member:
+    - Name: x
+      Type: System.Single
+      Value: 1052
+    - Name: y
+      Type: System.Single
+      Value: 1.200012
+    - Name: Name
+      Type: System.String
+      Value: 
+    - Name: FriendlyName
+      Type: System.String
+      Value: 
+    - Name: Description
+      Type: System.String
+      Value: 
+    - Name: FriendlyDescription
+      Type: System.String
+      Value: 
+    - Name: Comment
+      Type: System.String
+      Value: 
+  - Name: 1ffec2d8-2536-434a-a3cd-d0ba3135cb32.Decorators
+    Type: System.Collections.Generic.List`1[[Megumin.AI.BehaviorTree.IDecorator]]
+    Member: []
+  - Name: 1ffec2d8-2536-434a-a3cd-d0ba3135cb32.Meta
+    Type: Megumin.AI.BehaviorTree.NodeMeta
+    Member:
+    - Name: x
+      Type: System.Single
+      Value: 910.6
+    - Name: y
+      Type: System.Single
+      Value: 159.2
+    - Name: Name
+      Type: System.String
+      Value: 
+    - Name: FriendlyName
+      Type: System.String
+      Value: 
+    - Name: Description
+      Type: System.String
+      Value: 
+    - Name: FriendlyDescription
+      Type: System.String
+      Value: 
+    - Name: Comment
+      Type: System.String
+      Value: 
   - Name: 3d9286f2-ddab-4445-bc6d-4248e73b9f48.Decorators
     Type: System.Collections.Generic.List`1[[Megumin.AI.BehaviorTree.IDecorator]]
     Member: []
@@ -443,7 +512,7 @@ MonoBehaviour:
       Value: 022a352e-f7fa-4a7b-814f-d3650c974a16
     - Name: 1
       Type: $ref
-      Value: e28e2c2f-1371-43d9-8d3d-f60c8729dba7
+      Value: 1ffec2d8-2536-434a-a3cd-d0ba3135cb32
   - Name: 41cf3ece-6a3b-417e-a2e1-0c495da7040e.Decorators
     Type: System.Collections.Generic.List`1[[Megumin.AI.BehaviorTree.IDecorator]]
     Member:
@@ -567,33 +636,6 @@ MonoBehaviour:
     - Name: Comment
       Type: System.String
       Value: 
-  - Name: 540fd0a6-85c9-4519-a021-b868e37c7bdf.Decorators
-    Type: System.Collections.Generic.List`1[[Megumin.AI.BehaviorTree.IDecorator]]
-    Member: []
-  - Name: 540fd0a6-85c9-4519-a021-b868e37c7bdf.Meta
-    Type: Megumin.AI.BehaviorTree.NodeMeta
-    Member:
-    - Name: x
-      Type: System.Single
-      Value: 1077.476
-    - Name: y
-      Type: System.Single
-      Value: -2.607147
-    - Name: Name
-      Type: System.String
-      Value: 
-    - Name: FriendlyName
-      Type: System.String
-      Value: 
-    - Name: Description
-      Type: System.String
-      Value: 
-    - Name: FriendlyDescription
-      Type: System.String
-      Value: 
-    - Name: Comment
-      Type: System.String
-      Value: 
   - Name: 767867f6-1540-4cb4-9827-9a9c290041d3.Decorators
     Type: System.Collections.Generic.List`1[[Megumin.AI.BehaviorTree.IDecorator]]
     Member: []
@@ -629,7 +671,7 @@ MonoBehaviour:
       Value: 41cf3ece-6a3b-417e-a2e1-0c495da7040e
     - Name: 1
       Type: $ref
-      Value: 540fd0a6-85c9-4519-a021-b868e37c7bdf
+      Value: 1ea02464-8ebe-4089-a16d-236ab2024823
   - Name: 7c19c1b0-7e31-41f6-805b-ea8a2a35a980.Decorators
     Type: System.Collections.Generic.List`1[[Megumin.AI.BehaviorTree.IDecorator]]
     Member: []
@@ -828,33 +870,6 @@ MonoBehaviour:
     - Name: y
       Type: System.Single
       Value: 284.275
-    - Name: Name
-      Type: System.String
-      Value: 
-    - Name: FriendlyName
-      Type: System.String
-      Value: 
-    - Name: Description
-      Type: System.String
-      Value: 
-    - Name: FriendlyDescription
-      Type: System.String
-      Value: 
-    - Name: Comment
-      Type: System.String
-      Value: 
-  - Name: e28e2c2f-1371-43d9-8d3d-f60c8729dba7.Decorators
-    Type: System.Collections.Generic.List`1[[Megumin.AI.BehaviorTree.IDecorator]]
-    Member: []
-  - Name: e28e2c2f-1371-43d9-8d3d-f60c8729dba7.Meta
-    Type: Megumin.AI.BehaviorTree.NodeMeta
-    Member:
-    - Name: x
-      Type: System.Single
-      Value: 877.2502
-    - Name: y
-      Type: System.Single
-      Value: 152.1375
     - Name: Name
       Type: System.String
       Value: 

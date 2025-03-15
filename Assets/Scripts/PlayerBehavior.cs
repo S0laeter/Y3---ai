@@ -90,9 +90,9 @@ public class PlayerBehavior : MonoBehaviour
 
 
 
-        //ai dodging stuffs
-        chanceToDodge = Mathf.Clamp(hitHeadReceived * 10, 0f, 100f);
-        chanceToBlock = Mathf.Clamp(hitBodyReceived * 10, 0f, 100f);
+        //the more hit he takes, the higher the chance to dodge successfully
+        chanceToDodge = Mathf.Clamp(hitHeadReceived * 20, 0f, 100f);
+        chanceToBlock = Mathf.Clamp(hitBodyReceived * 20, 0f, 100f);
 
 
 

@@ -169,16 +169,6 @@ public class MoveForwardState : CombatBaseState
 
         controller.Move(player.transform.forward * 1.5f * Time.deltaTime);
 
-        /*//if no need to move anymore
-        if (player.combatIntention != CombatIntention.MoveForward)
-        {
-            stateMachine.SetNextStateToMain();
-        }
-
-        if (fixedTime >= stateDuration)
-        {
-            stateMachine.SetNextStateToMain();
-        }*/
 
     }
 
@@ -202,17 +192,6 @@ public class MoveBackwardState : CombatBaseState
 
         controller.Move(-player.transform.forward * 1f * Time.deltaTime);
 
-        /*//if no need to move anymore
-        if (player.combatIntention != CombatIntention.MoveBackward)
-        {
-            stateMachine.SetNextStateToMain();
-        }
-
-        if (fixedTime >= stateDuration)
-        {
-            stateMachine.SetNextStateToMain();
-        }*/
-            
 
     }
 
@@ -224,7 +203,7 @@ public class BlockState : CombatBaseState
     {
         base.OnEnter(_stateMachine);
 
-        stateDuration = 2f;
+        stateDuration = 1f;
 
         anim.SetTrigger("block");
         Debug.Log(player.name + " blocking");
@@ -234,17 +213,9 @@ public class BlockState : CombatBaseState
     {
         base.OnUpdate();
 
-        /*//if no need to block anymore
-        if (player.combatIntention != CombatIntention.Block)
-        {
-            stateMachine.SetNextStateToMain();
-        }
-
-        //this is here so that it wouldnt be blocking forever
+        /*//this is here so that it wouldnt be blocking forever
         if (fixedTime >= stateDuration)
-        {
-            stateMachine.SetNextStateToMain();
-        }*/
+            stateMachine.SetNextStateToMain();*/
 
     }
 
@@ -256,7 +227,7 @@ public class DodgeState : CombatBaseState
     {
         base.OnEnter(_stateMachine);
 
-        stateDuration = 0.4f;
+        stateDuration = 1f;
 
         player.ConsumeStamina(8f);
 

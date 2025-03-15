@@ -62,7 +62,7 @@ public sealed class SetNextState : BTActionNode
                     player.stateMachine.SetNextState(new MoveBackwardState());
                     break;
                 default:
-                    player.stateMachine.SetNextState(new IdleState());
+                    player.stateMachine.SetNextStateToMain();
                     break;
             }
         }
@@ -84,6 +84,10 @@ public sealed class SetNextState : BTActionNode
         if (time > duration)
         {
             return Status.Succeeded;
+        }
+        else if (time >= duration - 0.1f)
+        {
+            player.stateMachine.SetNextStateToMain();
         }
 
         return Status.Running;
