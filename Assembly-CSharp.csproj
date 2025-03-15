@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Behavior Tree\CheckPlayerDistance.cs" />
+    <Compile Include="Assets\Behavior Tree\CheckOtherPlayerState.cs" />
     <Compile Include="Assets\Scripts\HitboxManager.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Behavior Tree\SetNextState.cs" />

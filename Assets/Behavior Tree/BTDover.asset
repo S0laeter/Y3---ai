@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a24eb528ebc97814a88d65c7618bfc70, type: 3}
+  m_Name: BTDover
+  m_EditorClassIdentifier: 
+  SerializationVersion: 1.1.1
+  <GUID>k__BackingField: 71e664a0-21bc-4d72-94ab-e5d6c7ad4852
+  <StartNodeGUID>k__BackingField: 
+  UseSerializeReferenceGeneric: 0
+  UnityObjectRef: []
+  variables: []
+  nodes:
+  - Name: c4836209-b964-434d-8eeb-4152c4896f04
+    Type: Megumin.AI.BehaviorTree.Repeater
+    Member:
+    - Name: Meta
+      Type: $ref
+      Value: c4836209-b964-434d-8eeb-4152c4896f04.Meta
+    - Name: Decorators
+      Type: $ref
+      Value: c4836209-b964-434d-8eeb-4152c4896f04.Decorators
+    - Name: Children
+      Type: $ref
+      Value: c4836209-b964-434d-8eeb-4152c4896f04.Children
+    - Name: GUID
+      Type: System.String
+      Value: c4836209-b964-434d-8eeb-4152c4896f04
+  decorators: []
+  refObjs:
+  - Name: c4836209-b964-434d-8eeb-4152c4896f04.Children
+    Type: System.Collections.Generic.List`1[[Megumin.AI.BehaviorTree.BTNode]]
+    Member: []
+  - Name: c4836209-b964-434d-8eeb-4152c4896f04.Decorators
+    Type: System.Collections.Generic.List`1[[Megumin.AI.BehaviorTree.IDecorator]]
+    Member: []
+  - Name: c4836209-b964-434d-8eeb-4152c4896f04.Meta
+    Type: Megumin.AI.BehaviorTree.NodeMeta
+    Member:
+    - Name: x
+      Type: System.Single
+      Value: 444
+    - Name: y
+      Type: System.Single
+      Value: 86.60001
