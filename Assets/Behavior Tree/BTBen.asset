@@ -90,10 +90,10 @@ MonoBehaviour:
     Member:
     - Name: stateName
       Type: System.String
-      Value: left straight
+      Value: right hook
     - Name: duration
       Type: System.Single
-      Value: 0.5
+      Value: 0.6
     - Name: Meta
       Type: $ref
       Value: 45704c63-e917-4f30-bb4e-eca010173f41.Meta
@@ -455,10 +455,10 @@ MonoBehaviour:
     Member:
     - Name: x
       Type: System.Single
-      Value: 685.0932
+      Value: 683.6
     - Name: y
       Type: System.Single
-      Value: -5.453384
+      Value: -5.600006
     - Name: Name
       Type: System.String
       Value: 

@@ -2,17 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum CombatIntention
+public enum CombatState
 {
     Idle,
     Won,
-    Lost,
-    MoveForward,
-    MoveBackward,
-    AttackHigh,
-    AttackLow,
-    Block,
-    Dodge
+    Lost
 }
 
 public class PlayerBehavior : MonoBehaviour
@@ -21,6 +15,11 @@ public class PlayerBehavior : MonoBehaviour
 
     public PlayerBehavior otherPlayer;
     public float distanceToOtherPlayer;
+
+    public int hitHeadReceived;
+    public int hitBodyReceived;
+    public float chanceToDodge;
+    public float chanceToBlock;
 
     public StateMachine stateMachine;
     public CharacterController controller;
@@ -32,7 +31,7 @@ public class PlayerBehavior : MonoBehaviour
     public float maxStamina = 100f;
 
     //this is to decide which action to do next
-    public CombatIntention combatIntention;
+    public CombatState combatState;
 
     public bool isEndgame = false;
 
@@ -55,6 +54,11 @@ public class PlayerBehavior : MonoBehaviour
         controller = GetComponent<CharacterController>();
         anim = GetComponent<Animator>();
 
+        hitHeadReceived = 0;
+        hitBodyReceived = 0;
+        chanceToDodge = 0;
+        chanceToBlock = 0;
+
         currentHp = maxHp;
         Actions.UpdatePlayerHealthBar(this);
         currentStamina = maxStamina;
@@ -72,7 +76,7 @@ public class PlayerBehavior : MonoBehaviour
         distanceToOtherPlayer = Vector3.Distance(otherPlayer.transform.position, transform.position);
 
         //if die
-        if (currentHp <= 0 && combatIntention != CombatIntention.Lost)
+        if (currentHp <= 0 && combatState != CombatState.Lost)
         {
             currentHp = 0;
 
@@ -83,6 +87,12 @@ public class PlayerBehavior : MonoBehaviour
             return;
         }
 
+
+
+
+        //ai dodging stuffs
+        chanceToDodge = Mathf.Clamp(hitHeadReceived * 10, 0f, 100f);
+        chanceToBlock = Mathf.Clamp(hitBodyReceived * 10, 0f, 100f);
 
 
 
@@ -165,14 +175,14 @@ public class PlayerBehavior : MonoBehaviour
 
 
 
-    public IEnumerator DoSomethingForSomeTime(CombatIntention whatNow, float forHowLong)
+    public IEnumerator DoSomethingForSomeTime(CombatState whatNow, float forHowLong)
     {
-        combatIntention = whatNow;
+        combatState = whatNow;
 
         yield return new WaitForSeconds(forHowLong);
 
         if (!isEndgame)
-            combatIntention = CombatIntention.Idle;
+            combatState = CombatState.Idle;
     }
 
     //just in case player somehow drifts away from the centre line
@@ -192,7 +202,7 @@ public class PlayerBehavior : MonoBehaviour
     public void TakeHit(float hitDamage, int hitType)
     {
         //if still alive, can take the hit
-        if (combatIntention != CombatIntention.Lost)
+        if (combatState != CombatState.Lost)
         {
             //if blocking, and has enough stamina to tank the hit
             if (stateMachine.currentState.GetType() == typeof(BlockState) && currentStamina >= hitDamage)
@@ -216,11 +226,13 @@ public class PlayerBehavior : MonoBehaviour
                 {
                     TakeDamage(hitDamage * 1.2f);
                     stateMachine.SetNextState(new HitHeadState());
+                    hitHeadReceived++;
                 }
                 else if (hitType == 0)
                 {
                     TakeDamage(hitDamage);
                     stateMachine.SetNextState(new HitBodyState());
+                    hitBodyReceived++;
                 }
             }
 
@@ -255,13 +267,13 @@ public class PlayerBehavior : MonoBehaviour
     private void Lose()
     {
         isEndgame = true;
-        combatIntention = CombatIntention.Lost;
+        combatState = CombatState.Lost;
         stateMachine.SetNextState(new LoseState());
     }
     public void Win()
     {
         isEndgame = true;
-        combatIntention = CombatIntention.Won;
+        combatState = CombatState.Won;
         stateMachine.SetNextState(new WinState());
     }
     private void OnTimerOut()

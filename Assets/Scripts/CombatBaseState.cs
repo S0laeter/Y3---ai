@@ -48,6 +48,7 @@ public class IdleState : CombatBaseState
     {
         base.OnEnter(_stateMachine);
 
+        //anim.SetTrigger("idle");
         Debug.Log(player.name + " idle");
     }
 
@@ -129,10 +130,6 @@ public class LoseState : CombatBaseState
     {
         base.OnUpdate();
 
-        //if no need to move anymore
-        if (player.combatIntention != CombatIntention.MoveForward)
-            stateMachine.SetNextStateToMain();
-
     }
 
 }
@@ -149,10 +146,6 @@ public class WinState : CombatBaseState
     public override void OnUpdate()
     {
         base.OnUpdate();
-
-        //if no need to move anymore
-        if (player.combatIntention != CombatIntention.MoveForward)
-            stateMachine.SetNextStateToMain();
 
     }
 

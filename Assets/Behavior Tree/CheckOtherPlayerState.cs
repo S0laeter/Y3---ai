@@ -8,7 +8,7 @@ using UnityEngine;
 
 public sealed class CheckOtherPlayerState : ConditionDecorator
 {
-    public string stateName;
+    public string stateType;
 
     private PlayerBehavior otherPlayer;
 
@@ -16,8 +16,25 @@ public sealed class CheckOtherPlayerState : ConditionDecorator
     {
         otherPlayer = this.GameObject.GetComponent<PlayerBehavior>().otherPlayer;
 
-        if (otherPlayer.stateMachine.currentState.GetType().ToString() == stateName)
-            return true;
+        switch (stateType)
+        {
+            case "hit head":
+                if (otherPlayer.stateMachine.currentState.GetType() == typeof(LeftStraightState)
+                || otherPlayer.stateMachine.currentState.GetType() == typeof(RightStraightState)
+                || otherPlayer.stateMachine.currentState.GetType() == typeof(LeftHookState)
+                || otherPlayer.stateMachine.currentState.GetType() == typeof(RightHookState))
+                    return true;
+                break;
+
+            case "hit body":
+                if (otherPlayer.stateMachine.currentState.GetType() == typeof(LeftBodyState)
+                || otherPlayer.stateMachine.currentState.GetType() == typeof(RightBodyState))
+                    return true;
+                break;
+
+            default:
+                break;
+        }
 
         return false;
     }
