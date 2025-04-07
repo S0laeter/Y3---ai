@@ -28,6 +28,9 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = 60;
+
         currentRound = 1;
         currentTime = maxTime;
         StartCoroutine(TimerCountdown());

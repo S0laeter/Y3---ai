@@ -159,6 +159,7 @@ public class MoveForwardState : CombatBaseState
 
         stateDuration = 0.633f;
 
+        anim.ResetTrigger("idle");
         anim.SetTrigger("move forward");
         Debug.Log(player.name + " moving forward");
     }
@@ -182,6 +183,7 @@ public class MoveBackwardState : CombatBaseState
 
         stateDuration = 0.443f;
 
+        anim.ResetTrigger("idle");
         anim.SetTrigger("move backward");
         Debug.Log(player.name + " moving backward");
     }

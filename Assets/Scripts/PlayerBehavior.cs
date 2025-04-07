@@ -16,8 +16,6 @@ public class PlayerBehavior : MonoBehaviour
     public PlayerBehavior otherPlayer;
     public float distanceToOtherPlayer;
 
-    public int hitHeadReceived;
-    public int hitBodyReceived;
     public float chanceToDodge;
     public float chanceToBlock;
 
@@ -54,8 +52,6 @@ public class PlayerBehavior : MonoBehaviour
         controller = GetComponent<CharacterController>();
         anim = GetComponent<Animator>();
 
-        hitHeadReceived = 0;
-        hitBodyReceived = 0;
         chanceToDodge = 0;
         chanceToBlock = 0;
 
@@ -87,12 +83,6 @@ public class PlayerBehavior : MonoBehaviour
             return;
         }
 
-
-
-
-        //the more hit he takes, the higher the chance to dodge successfully
-        chanceToDodge = Mathf.Clamp(hitHeadReceived * 20, 0f, 100f);
-        chanceToBlock = Mathf.Clamp(hitBodyReceived * 20, 0f, 100f);
 
 
 
@@ -165,9 +155,16 @@ public class PlayerBehavior : MonoBehaviour
 
 
 
+        //chance decrease over time
+        if (chanceToDodge > 0)
+            chanceToDodge -= Mathf.Clamp(1f * Time.deltaTime, 0f, 100f);
+        if (chanceToBlock > 0)
+            chanceToBlock -= Mathf.Clamp(1f * Time.deltaTime, 0f, 100f);
+
+        //stamina behavior
         if (currentStamina < maxStamina)
         {
-            currentStamina += 7f * Time.deltaTime;
+            currentStamina += 10f * Time.deltaTime;
             Actions.UpdatePlayerStaminaBar(this);
         }
 
@@ -217,6 +214,8 @@ public class PlayerBehavior : MonoBehaviour
                 if (hitType == 0)
                 {
                     TakeDamage(hitDamage * 1.2f);
+
+                    IncreaseChanceToBlock();
                 }
             }
             //if doing anything else
@@ -226,13 +225,15 @@ public class PlayerBehavior : MonoBehaviour
                 {
                     TakeDamage(hitDamage * 1.2f);
                     stateMachine.SetNextState(new HitHeadState());
-                    hitHeadReceived++;
+
+                    IncreaseChanceToDodge();
                 }
                 else if (hitType == 0)
                 {
                     TakeDamage(hitDamage);
                     stateMachine.SetNextState(new HitBodyState());
-                    hitBodyReceived++;
+
+                    IncreaseChanceToBlock();
                 }
             }
 
@@ -253,6 +254,24 @@ public class PlayerBehavior : MonoBehaviour
         Actions.UpdatePlayerStaminaBar(this);
     }
 
+    //the more hit he takes, the higher the chance to dodge successfully
+    public void IncreaseChanceToDodge()
+    {
+        chanceToDodge += Mathf.Clamp(30, 0f, 100f);
+
+        //just to make sure, it fucks up sometimes
+        if (chanceToDodge > 100)
+            chanceToDodge = 100;
+    }
+    //the more hit he takes, the higher the chance to block successfully
+    public void IncreaseChanceToBlock()
+    {
+        chanceToBlock += Mathf.Clamp(40, 0f, 100f);
+
+        //just to make sure, it fucks up sometimes
+        if (chanceToBlock > 100)
+            chanceToBlock = 100;
+    }
 
 
 
